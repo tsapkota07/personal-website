@@ -32,6 +32,7 @@
   <nav class="nav" id="nav">
     <a href="index.html" class="nav-brand">tirsan.</a>
     <div class="nav-links">
+      <button class="mode-toggle" id="mode-toggle" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">☀︎</button>
       <a href="shelf.html"  class="nav-link">shelf</a>
       <a href="resume.html" class="nav-link">résumé</a>
       <button class="nav-hello" data-open-contact>say hello</button>
@@ -82,13 +83,16 @@
       <div class="section-content">
         <div class="section-body">
           <p>
-            I'm a developer based in Youngstown, OH. I like building things that are
-            useful, well-thought-out, and occasionally surprising. I care about the
-            details — in code and in everything else.
+            I'm a CS junior at Youngstown State University (GPA 3.91, graduating May 2027).
+            I build and ship full-stack web applications end-to-end — from database schema
+            to cloud deployment. Strong in Java/Spring Boot and Python/FastAPI backends,
+            with hands-on AWS experience from a 36-hour hackathon where my team won
+            2nd place overall and Best Use of AWS.
           </p>
           <p>
-            Studying BS in Computer Science at Youngstown State University. When I'm
-            not writing code I'm usually deep in a book or a manga arc I can't put down.
+            Outside of class I tutor Data Structures, C++, and Calculus, and lead the
+            Nepalese Student Association on campus. When I'm not writing code I'm usually
+            deep in a book or a manga arc I can't put down.
           </p>
         </div>
       </div>
@@ -122,18 +126,77 @@
             </ul>
           </a>
 
-          <div class="project-card project-card--soon">
+          <!-- TODO: DSA visualizer — interactive step-by-step visualizations for
+               data structures and algorithms (binary trees, sorting, graph traversal).
+               Stack: JavaScript, Canvas / SVG. Add back when ready. -->
+
+          <a class="project-card"
+             href="https://github.com/tsapkota07/vigil"
+             target="_blank"
+             rel="noopener noreferrer">
             <div class="project-top">
-              <span class="project-title">DSA visualizer</span>
-              <span class="soon-badge">soon</span>
+              <span class="project-title">satsec</span>
+              <span class="project-arrow">↗</span>
             </div>
             <p class="project-desc">
-              Interactive step-by-step visualizations for data structures and algorithms
-              — binary trees, sorting, graph traversal, and more.
+              Full-stack website auditing platform built in 36 hours. Audits any public
+              URL across performance, SEO, accessibility, and security — no signup needed.
+              Won 2nd place overall + Best Use of AWS.
             </p>
             <ul class="project-tags">
+              <li>Python</li>
+              <li>FastAPI</li>
+              <li>React</li>
+              <li>AWS</li>
+            </ul>
+          </a>
+
+          <a class="project-card"
+             href="https://github.com/tsapkota07/personal-website"
+             target="_blank"
+             rel="noopener noreferrer">
+            <div class="project-top">
+              <span class="project-title">this site</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <p class="project-desc">
+              Fully static personal site — no frameworks, no build step. 12-theme system,
+              dynamic SVG favicon, reading shelf with real-time search, and manga card
+              flip interactions.
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li>
+              <li>CSS</li>
               <li>JavaScript</li>
-              <li>Canvas / SVG</li>
+            </ul>
+          </a>
+
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-title">penguin quest</span>
+            </div>
+            <p class="project-desc">
+              2D campus exploration game in Pygame. A penguin navigates a 5000×4000px
+              world modeled after a real university campus, completing quests across
+              32 buildings.
+            </p>
+            <ul class="project-tags">
+              <li>Python</li>
+              <li>Pygame</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-title">bst dictionary</span>
+            </div>
+            <p class="project-desc">
+              Templated key-value dictionary in C++ using a Binary Search Tree. Index-based
+              node storage with a free-list allocator. Stress-tested with 1M generated keys.
+            </p>
+            <ul class="project-tags">
+              <li>C++</li>
+              <li>CMake</li>
             </ul>
           </div>
 

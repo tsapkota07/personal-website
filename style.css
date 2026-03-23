@@ -111,6 +111,91 @@
 }
 
 /* ============================================================
+   LIGHT MODE
+   ------------------------------------------------------------
+   Overrides bg/text variables only. Accent colors from [data-theme]
+   are unchanged — all theme dots work identically in light mode.
+   ============================================================ */
+[data-mode="light"] {
+  --bg:         #f2ede6;
+  --bg-surface: #e8e2d8;
+  --bg-border:  #d4ccc0;
+
+  --text:       #2a2520;
+  --text-muted: #6a6058;
+  --text-dim:   #a89e92;
+}
+
+/* Modal in light mode */
+[data-mode="light"] .modal-overlay {
+  background: rgba(160, 148, 136, 0.65);
+}
+
+[data-mode="light"] .modal-card {
+  background-color: #e8e0d4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='68'%3E%3Crect x='1' y='2' width='56' height='30' rx='1.5' fill='black' fill-opacity='.06'/%3E%3Crect x='61' y='2' width='56' height='30' rx='1.5' fill='black' fill-opacity='.04'/%3E%3Crect x='1' y='36' width='26' height='30' rx='1.5' fill='black' fill-opacity='.05'/%3E%3Crect x='31' y='36' width='56' height='30' rx='1.5' fill='black' fill-opacity='.07'/%3E%3Crect x='91' y='36' width='26' height='30' rx='1.5' fill='black' fill-opacity='.04'/%3E%3C/svg%3E");
+  border-color: #c8b8a8;
+  box-shadow: 0 0 0 1px #b8a898, 0 28px 70px rgba(0, 0, 0, 0.2);
+}
+
+[data-mode="light"] .modal-shelf-header {
+  background: #f0e8dc;
+}
+
+[data-mode="light"] .modal-mini-books .mmb {
+  filter: brightness(2.4) saturate(0.7);
+}
+
+[data-mode="light"] .bl-page {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+[data-mode="light"] .modal-shelf-plank {
+  background: linear-gradient(to bottom, #c8b49a, #b8a088);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+[data-mode="light"] .form-field input,
+[data-mode="light"] .form-field textarea {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: #c8b8a8;
+  color: var(--text);
+}
+
+[data-mode="light"] .form-field input::placeholder,
+[data-mode="light"] .form-field textarea::placeholder {
+  color: var(--text-dim);
+}
+
+[data-mode="light"] body {
+  background-image: radial-gradient(
+    ellipse 90% 60% at 50% 10%,
+    #ede8e0 0%,
+    #f2ede6 55%,
+    #e4ddd4 100%
+  );
+}
+
+/* Toggle button */
+.mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text-dim);
+  font-size: 1rem;
+  line-height: 1;
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.mode-toggle:hover {
+  color: var(--text-muted);
+  transform: scale(1.15);
+}
+
+/* ============================================================
    RESET & BASE
    ============================================================ */
 *, *::before, *::after {

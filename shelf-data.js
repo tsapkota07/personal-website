@@ -1349,7 +1349,7 @@ const SHELF = [
     color: '#101020',
     initials: 'BN',
     chapter: '139',
-    image: 'https://cdn.anime-planet.com/manga/primary/boundless-necromancer-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/275562l.jpg',
   },
   {
     id: 128,
@@ -1360,7 +1360,7 @@ const SHELF = [
     color: '#101020',
     initials: 'CF',
     chapter: '120',
-    image: 'https://cdn.anime-planet.com/manga/primary/chronicles-of-the-demon-faction-1.jpg',
+    image: 'https://myanimelist.net/images/manga/2/279966l.jpg',
   },
   {
     id: 129,
@@ -1371,7 +1371,7 @@ const SHELF = [
     color: '#101020',
     initials: 'DL',
     chapter: '185',
-    image: 'https://cdn.anime-planet.com/manga/primary/doctor-live-again-1.jpg',
+    image: 'https://uploads.mangadex.org/covers/8acdc047-6c6b-4603-8ee9-55f03421fceb/951166ee-792c-4e18-845e-9e85d71d5cc7.jpg',
   },
   {
     id: 130,
@@ -1382,7 +1382,7 @@ const SHELF = [
     color: '#101020',
     initials: 'DP',
     chapter: '65',
-    image: 'https://cdn.anime-planet.com/manga/primary/doctor-player-1.jpg',
+    image: 'https://myanimelist.net/images/manga/2/276411l.jpg',
   },
   {
     id: 131,
@@ -1393,7 +1393,7 @@ const SHELF = [
     color: '#101020',
     initials: 'CY',
     chapter: '130',
-    image: 'https://cdn.anime-planet.com/manga/primary/cheonhwa-archives-young-master-1.jpg',
+    image: 'https://uploads.mangadex.org/covers/b2379cf4-3915-4577-b4df-329fc9900620/0b81dca9-3326-4278-b4bd-2ddb51b4c70b.jpg',
   },
   {
     id: 132,
@@ -1404,7 +1404,7 @@ const SHELF = [
     color: '#101020',
     initials: 'HG',
     chapter: '65',
-    image: 'https://cdn.anime-planet.com/manga/primary/heavenly-martial-god-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/264703l.jpg',
   },
   {
     id: 133,
@@ -1415,18 +1415,18 @@ const SHELF = [
     color: '#101020',
     initials: 'HH',
     chapter: '61',
-    image: 'https://cdn.anime-planet.com/manga/primary/hoarding-in-hell-1.jpg',
+    image: 'https://myanimelist.net/images/manga/1/264153l.jpg',
   },
   {
     id: 134,
     type: 'manga',
-    title: 'Jujutsu Kaisen 0',
+    title: 'Jujutsu Kaisen Modulo',
     author: 'Gege Akutami',
     status: 'finished',
     color: '#101020',
     initials: 'J0',
     chapter: '25',
-    image: 'https://cdn.myanimelist.net/images/manga/3/210341l.jpg',
+    image: 'https://myanimelist.net/images/manga/2/339595l.jpg',
   },
   {
     id: 135,
@@ -1437,7 +1437,7 @@ const SHELF = [
     color: '#101020',
     initials: 'AS',
     chapter: '85',
-    image: 'https://cdn.anime-planet.com/manga/primary/absolute-master-of-the-senate-1.jpg',
+    image: 'https://uploads.mangadex.org/covers/43848429-00b1-4215-bb0c-31973fe705cf/46d4a21f-cd9f-4b0b-9033-e41daa033944.jpg',
   },
   {
     id: 136,
@@ -1448,7 +1448,7 @@ const SHELF = [
     color: '#101020',
     initials: 'PS',
     chapter: '42',
-    image: 'https://cdn.anime-planet.com/manga/primary/path-of-the-shaman-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/263430l.jpg',
   },
   {
     id: 137,
@@ -1459,7 +1459,7 @@ const SHELF = [
     color: '#101020',
     initials: 'RW',
     chapter: '130',
-    image: 'https://cdn.anime-planet.com/manga/primary/return-of-the-war-god-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/271901l.jpg',
   },
   {
     id: 138,
@@ -1470,7 +1470,7 @@ const SHELF = [
     color: '#101020',
     initials: 'GM',
     chapter: '48',
-    image: 'https://cdn.anime-planet.com/manga/primary/genius-medicinal-mage-1.jpg',
+    image: 'https://myanimelist.net/images/manga/1/278358l.jpg',
   },
   {
     id: 139,
@@ -1481,7 +1481,7 @@ const SHELF = [
     color: '#101020',
     initials: 'MF',
     chapter: '95',
-    image: 'https://cdn.anime-planet.com/manga/primary/murim-fitness-trainer-1.jpg',
+    image: 'https://uploads.mangadex.org/covers/a221707e-649a-4455-ba76-8e1a44439db9/67c08713-b24a-4c5d-983e-ae757b8310f3.jpg',
   },
   {
     id: 140,
@@ -1492,7 +1492,7 @@ const SHELF = [
     color: '#101020',
     initials: 'PH',
     chapter: '50',
-    image: 'https://cdn.anime-planet.com/manga/primary/perfect-hybrid-1.jpg',
+    image: 'https://myanimelist.net/images/manga/2/272841l.jpg',
   },
   {
     id: 141,
@@ -1503,7 +1503,7 @@ const SHELF = [
     color: '#101020',
     initials: 'MB',
     chapter: '105',
-    image: 'https://cdn.anime-planet.com/manga/primary/my-master-is-a-backseat-gamer-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/264281l.jpg',
   },
   {
     id: 142,
@@ -1514,7 +1514,7 @@ const SHELF = [
     color: '#101020',
     initials: 'NS',
     chapter: '124',
-    image: 'https://cdn.anime-planet.com/manga/primary/nine-heavens-swordmaster-1.jpg',
+    image: 'https://myanimelist.net/images/manga/1/272267l.jpg',
   },
   {
     id: 143,
@@ -1525,7 +1525,7 @@ const SHELF = [
     color: '#101020',
     initials: 'HS',
     chapter: '40',
-    image: 'https://cdn.anime-planet.com/manga/primary/heavenly-sword-grand-saga-1.jpg',
+    image: 'https://myanimelist.net/images/manga/1/269947l.jpg',
   },
   {
     id: 144,
@@ -1536,7 +1536,7 @@ const SHELF = [
     color: '#101020',
     initials: 'BS',
     chapter: '64',
-    image: 'https://cdn.anime-planet.com/manga/primary/act-like-a-boss-mr-swallow-1.jpg',
+    image: 'https://myanimelist.net/images/manga/1/297789l.jpg',
   },
   {
     id: 145,
@@ -1547,7 +1547,7 @@ const SHELF = [
     color: '#101020',
     initials: 'TR',
     chapter: '95',
-    image: 'https://cdn.anime-planet.com/manga/primary/reaper-of-the-drifting-moon-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/266584l.jpg',
   },
   {
     id: 146,
@@ -1558,7 +1558,7 @@ const SHELF = [
     color: '#101020',
     initials: 'LL',
     chapter: '138',
-    image: 'https://cdn.anime-planet.com/manga/primary/the-lazy-prince-becomes-a-genius-1.jpg',
+    image: 'https://myanimelist.net/images/manga/2/260662l.jpg',
   },
   {
     id: 147,
@@ -1569,7 +1569,7 @@ const SHELF = [
     color: '#101020',
     initials: 'FK',
     chapter: '34',
-    image: 'https://cdn.anime-planet.com/manga/primary/reincarnation-of-the-murim-clans-former-ranker-1.jpg',
+    image: 'https://myanimelist.net/images/manga/1/327383l.jpg',
   },
   {
     id: 148,
@@ -1580,7 +1580,7 @@ const SHELF = [
     color: '#101020',
     initials: 'RC',
     chapter: '133',
-    image: 'https://cdn.anime-planet.com/manga/primary/second-life-ranker-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/266880l.jpg',
   },
   {
     id: 149,
@@ -1591,7 +1591,7 @@ const SHELF = [
     color: '#101020',
     initials: 'DT',
     chapter: '120',
-    image: 'https://cdn.anime-planet.com/manga/primary/return-of-the-shattered-constellation-1.jpg',
+    image: 'https://myanimelist.net/images/manga/1/264059l.jpg',
   },
   {
     id: 150,
@@ -1602,7 +1602,7 @@ const SHELF = [
     color: '#101020',
     initials: 'SR',
     chapter: '152',
-    image: 'https://cdn.anime-planet.com/manga/primary/the-sss-class-ranker-returns-1.jpg',
+    image: 'https://myanimelist.net/images/manga/1/268327l.jpg',
   },
   {
     id: 151,
@@ -1613,7 +1613,7 @@ const SHELF = [
     color: '#101020',
     initials: 'DF',
     chapter: '107',
-    image: 'https://cdn.anime-planet.com/manga/primary/dungeon-farmer-1.jpg',
+    image: 'https://uploads.mangadex.org/covers/f461e344-2385-46b5-83b8-8776f5ea65d0/88c8bf13-56be-42df-af48-8be959d3f768.jpg',
   },
   {
     id: 152,
@@ -1624,7 +1624,7 @@ const SHELF = [
     color: '#101020',
     initials: 'SB',
     chapter: '121',
-    image: 'https://cdn.anime-planet.com/manga/primary/solo-bug-player-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/331109l.jpg',
   },
   {
     id: 153,
@@ -1635,7 +1635,7 @@ const SHELF = [
     color: '#101020',
     initials: 'AR',
     chapter: '135',
-    image: 'https://uploads.mangadex.org/covers/e7b5dec0-d875-4d44-b06c-8b45af865a32/cover.jpg',
+    image: 'https://myanimelist.net/images/manga/1/266946l.jpg',
   },
   {
     id: 154,
@@ -1646,7 +1646,7 @@ const SHELF = [
     color: '#101020',
     initials: 'CH',
     chapter: '162',
-    image: 'https://cdn.anime-planet.com/manga/primary/the-celestial-returned-from-hell-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/263913l.jpg',
   },
   {
     id: 155,
@@ -1657,7 +1657,7 @@ const SHELF = [
     color: '#101020',
     initials: 'HD',
     chapter: '107',
-    image: 'https://cdn.anime-planet.com/manga/primary/heavenly-demon-vs-lich-king-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/272426l.jpg',
   },
   {
     id: 156,
@@ -1668,7 +1668,7 @@ const SHELF = [
     color: '#101020',
     initials: 'HQ',
     chapter: '63',
-    image: 'https://cdn.anime-planet.com/manga/primary/the-heavenly-demon-wants-a-quiet-life-1.jpg',
+    image: 'https://myanimelist.net/images/manga/2/315561l.jpg',
   },
   {
     id: 157,
@@ -1679,7 +1679,7 @@ const SHELF = [
     color: '#101020',
     initials: 'RF',
     chapter: '83',
-    image: 'https://cdn.anime-planet.com/manga/primary/reincarnated-king-of-fists-1.jpg',
+    image: 'https://uploads.mangadex.org/covers/00296c8d-a815-4fdd-b4b8-c79c550ee875/520bf339-fb62-46d7-b22a-84866b1c79a4.jpg',
   },
   {
     id: 158,
@@ -1690,7 +1690,7 @@ const SHELF = [
     color: '#101020',
     initials: 'RP',
     chapter: '57',
-    image: 'https://cdn.anime-planet.com/manga/primary/the-100th-regression-of-the-max-level-player-1.jpg',
+    image: 'https://myanimelist.net/images/manga/2/291624l.jpg',
   },
   {
     id: 159,
@@ -1701,7 +1701,7 @@ const SHELF = [
     color: '#101020',
     initials: 'NC',
     chapter: '111',
-    image: 'https://cdn.anime-planet.com/manga/primary/nebula-civilization-1.jpg',
+    image: 'https://myanimelist.net/images/manga/2/293346l.jpg',
   },
   {
     id: 160,
@@ -1712,7 +1712,7 @@ const SHELF = [
     color: '#101020',
     initials: 'PP',
     chapter: '103',
-    image: 'https://cdn.anime-planet.com/manga/primary/the-player-hides-his-past-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/283574l.jpg',
   },
   {
     id: 161,
@@ -1723,7 +1723,7 @@ const SHELF = [
     color: '#101020',
     initials: 'HM',
     chapter: '87',
-    image: 'https://cdn.anime-planet.com/manga/primary/holy-power-of-modern-medicine-1.jpg',
+    image: 'https://myanimelist.net/images/manga/1/271069l.jpg',
   },
   {
     id: 162,
@@ -1734,7 +1734,7 @@ const SHELF = [
     color: '#101020',
     initials: 'BH',
     chapter: '49',
-    image: 'https://cdn.anime-planet.com/manga/primary/bountiful-harvest-demon-lord-1.jpg',
+    image: 'https://myanimelist.net/images/manga/3/321767l.jpg',
   },
   {
     id: 163,
@@ -1745,7 +1745,7 @@ const SHELF = [
     color: '#101020',
     initials: 'RN',
     chapter: '63',
-    image: 'https://cdn.anime-planet.com/manga/primary/returning-with-nothing-1.jpg',
+    image: 'https://myanimelist.net/images/manga/2/270200l.jpg',
   },
   {
     id: 164,
@@ -1756,7 +1756,7 @@ const SHELF = [
     color: '#101020',
     initials: 'YM',
     chapter: '48',
-    image: 'https://cdn.anime-planet.com/manga/primary/the-youngest-son-of-house-mayton-1.jpg',
+    image: 'https://myanimelist.net/images/manga/2/272391l.jpg',
   },
   {
     id: 165,
@@ -1767,7 +1767,7 @@ const SHELF = [
     color: '#101020',
     initials: 'YT',
     chapter: '95',
-    image: 'https://cdn.anime-planet.com/manga/primary/your-talent-is-mine-1.jpg',
+    image: 'https://uploads.mangadex.org/covers/9d6fce2b-3a2c-4f8e-853c-a6eadba713cd/d470a6c3-2366-4cda-9568-ba7c9fdd9df7.jpg',
   }
 
 ];

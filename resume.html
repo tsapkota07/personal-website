@@ -29,6 +29,7 @@
   <nav class="nav" id="nav">
     <a href="index.html" class="nav-brand">tirsan.</a>
     <div class="nav-links">
+      <button class="mode-toggle" id="mode-toggle" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">☀︎</button>
       <a href="shelf.html"  class="nav-link">shelf</a>
       <a href="resume.html" class="nav-link active">résumé</a>
       <button class="nav-hello" data-open-contact>say hello</button>
@@ -93,8 +94,8 @@
           </div>
           <div class="resume-entry-sub">Youngstown State University &middot; Youngstown, OH</div>
           <ul class="resume-entry-list">
-            <li>Provide first-line technical support for students and faculty across hardware, software, and network issues.</li>
-            <li>Diagnose and resolve account, printing, and lab equipment problems in a high-traffic walk-in environment.</li>
+            <li>Troubleshoot hardware, software, and network issues for students, faculty, and staff in a high-volume support environment.</li>
+            <li>Diagnose account access, system configuration, and application-related problems; document and escalate complex issues.</li>
           </ul>
         </div>
         <div class="resume-entry">
@@ -104,8 +105,8 @@
           </div>
           <div class="resume-entry-sub">Youngstown State University &middot; Youngstown, OH</div>
           <ul class="resume-entry-list">
-            <li>Tutor undergraduate students in CS courses including data structures, algorithms, and object-oriented programming.</li>
-            <li>Lead one-on-one and small group sessions; help with debugging, concept reinforcement, and exam preparation.</li>
+            <li>Tutor Data Structures, C++ Programming, Calculus, and Probability; guide students through algorithm design and complexity analysis.</li>
+            <li>Break down complex technical concepts into structured solutions to strengthen foundational problem-solving skills.</li>
           </ul>
         </div>
       </div>
@@ -118,23 +119,58 @@
         <div class="resume-entry">
           <div class="resume-entry-header">
             <a class="resume-entry-title" href="https://internship-tracker.tirsansapkota.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">internship tracker ↗</a>
-            <span class="resume-entry-date">2024</span>
+            <span class="resume-entry-date">Dec 2025 — Feb 2026</span>
           </div>
-          <div class="resume-entry-sub">Java &middot; Spring Boot &middot; PostgreSQL &middot; Thymeleaf</div>
+          <div class="resume-entry-sub">Java &middot; Spring Boot &middot; Spring Security &middot; PostgreSQL &middot; Thymeleaf &middot; Flyway &middot; Oracle Cloud</div>
           <ul class="resume-entry-list">
-            <li>Full-stack web app for tracking internship applications — guest mode, accounts, email verification, themes, soft deletes, CSV export.</li>
-            <li>Deployed to Oracle Cloud free-tier VM behind Nginx with TLS; automated deploy script with health-check polling.</li>
+            <li>Full-stack MVC app with guest mode (HttpSession), email verification, soft delete, CSV export, and a dev admin panel.</li>
+            <li>Per-IP rate limiter as a Spring HandlerInterceptor; unified token system covering 5 auth flows; three-tier UI access model via @ControllerAdvice.</li>
+            <li>Deployed on Oracle Cloud ARM VM with systemd, Nginx, and a deploy script that polls the health endpoint post-restart.</li>
           </ul>
         </div>
         <div class="resume-entry">
           <div class="resume-entry-header">
-            <span class="resume-entry-title">BSTDictionary</span>
+            <a class="resume-entry-title" href="https://github.com/tsapkota07/vigil" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">satsec ↗</a>
+            <span class="resume-entry-date">2026</span>
+          </div>
+          <div class="resume-entry-sub">Python &middot; FastAPI &middot; React &middot; AWS (Bedrock, S3, CloudFront, App Runner, RDS, SES) &middot; Docker</div>
+          <ul class="resume-entry-list">
+            <li>Full-stack website auditing platform built in 36 hours — audits any public URL across performance, SEO, accessibility, and security without signup.</li>
+            <li>AWS Bedrock (Claude 3.5 Sonnet) for plain-English summaries; frontend on S3 + CloudFront with OAC; backend on App Runner with IAM credential-chain access.</li>
+            <li>Won 2nd place overall + Best Use of AWS at a 36-hour hackathon.</li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <a class="resume-entry-title" href="https://github.com/tsapkota07/personal-website" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">personal website ↗</a>
+            <span class="resume-entry-date">2026</span>
+          </div>
+          <div class="resume-entry-sub">HTML &middot; CSS &middot; JavaScript &middot; Nginx &middot; Oracle Cloud</div>
+          <ul class="resume-entry-list">
+            <li>Fully static site — no frameworks, no build step. 12-theme CSS custom properties system with localStorage persistence.</li>
+            <li>Dynamic SVG favicon updated in real time via computed style API; reading shelf with real-time search, filtering, and manga card flip via CSS 3D transforms.</li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <span class="resume-entry-title">penguin quest</span>
+            <span class="resume-entry-date">2025</span>
+          </div>
+          <div class="resume-entry-sub">Python &middot; Pygame</div>
+          <ul class="resume-entry-list">
+            <li>2D campus exploration game with a 5000×4000px world, fixed-timestep game loop at 60 FPS, and a five-state finite state machine.</li>
+            <li>AABB collision resolution with separate X/Y axis passes; off-screen quest arrow via vector normalization and ray-edge intersection.</li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <span class="resume-entry-title">bst dictionary</span>
             <span class="resume-entry-date">2024</span>
           </div>
-          <div class="resume-entry-sub">C++17</div>
+          <div class="resume-entry-sub">C++17 &middot; CMake</div>
           <ul class="resume-entry-list">
-            <li>Binary search tree–backed dictionary with insert, search, delete, and ordered traversal operations.</li>
-            <li>Implemented from scratch with templated nodes; includes comprehensive unit tests.</li>
+            <li>Templated key-value dictionary backed by a BST with index-based node storage and a free-list allocator to avoid heap fragmentation.</li>
+            <li>Stress-tested with 1M generated keys validating insertion, lookup, and deletion correctness.</li>
           </ul>
         </div>
       </div>
@@ -151,8 +187,8 @@
               <span class="resume-skill-tag">Java</span>
               <span class="resume-skill-tag">C++</span>
               <span class="resume-skill-tag">Python</span>
-              <span class="resume-skill-tag">SQL</span>
               <span class="resume-skill-tag">JavaScript</span>
+              <span class="resume-skill-tag">SQL</span>
               <span class="resume-skill-tag">HTML / CSS</span>
             </div>
           </div>
@@ -163,17 +199,24 @@
               <span class="resume-skill-tag">Spring Security</span>
               <span class="resume-skill-tag">Hibernate / JPA</span>
               <span class="resume-skill-tag">Thymeleaf</span>
+              <span class="resume-skill-tag">FastAPI</span>
+              <span class="resume-skill-tag">React</span>
+              <span class="resume-skill-tag">SQLAlchemy</span>
+              <span class="resume-skill-tag">Pygame</span>
             </div>
           </div>
           <div class="resume-skill-group">
-            <span class="resume-skill-group-label">tools</span>
+            <span class="resume-skill-group-label">cloud &amp; tools</span>
             <div class="resume-skill-tags">
-              <span class="resume-skill-tag">Git</span>
-              <span class="resume-skill-tag">Maven</span>
-              <span class="resume-skill-tag">Linux</span>
+              <span class="resume-skill-tag">AWS (Bedrock, S3, CloudFront, App Runner, RDS, SES)</span>
               <span class="resume-skill-tag">Oracle Cloud</span>
+              <span class="resume-skill-tag">Docker</span>
+              <span class="resume-skill-tag">Git</span>
               <span class="resume-skill-tag">Nginx</span>
-              <span class="resume-skill-tag">Cloudflare</span>
+              <span class="resume-skill-tag">Linux / systemd</span>
+              <span class="resume-skill-tag">PostgreSQL</span>
+              <span class="resume-skill-tag">Maven</span>
+              <span class="resume-skill-tag">Flyway</span>
             </div>
           </div>
         </div>
@@ -187,20 +230,30 @@
         <div class="resume-entry">
           <div class="resume-entry-header">
             <span class="resume-entry-title">President — Nepalese Student Association</span>
-            <span class="resume-entry-date">YSU</span>
+            <span class="resume-entry-date">May 2025 — Present</span>
           </div>
+          <div class="resume-entry-sub">Youngstown State University</div>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <span class="resume-entry-title">2nd Place Overall + Best Use of AWS — Hackathon</span>
+            <span class="resume-entry-date">2026</span>
+          </div>
+          <div class="resume-entry-sub">Built SATsec, a production-ready full-stack website auditing platform, in 36 hours.</div>
         </div>
         <div class="resume-entry">
           <div class="resume-entry-header">
             <span class="resume-entry-title">Core Member — AWS Cloud Club</span>
-            <span class="resume-entry-date">YSU</span>
+            <span class="resume-entry-date">Dec 2025 — Present</span>
           </div>
+          <div class="resume-entry-sub">Youngstown State University</div>
         </div>
         <div class="resume-entry">
           <div class="resume-entry-header">
             <span class="resume-entry-title">Honors College Member</span>
-            <span class="resume-entry-date">YSU</span>
+            <span class="resume-entry-date">Aug 2023 — Present</span>
           </div>
+          <div class="resume-entry-sub">Youngstown State University</div>
         </div>
       </div>
     </section>

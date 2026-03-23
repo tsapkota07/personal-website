@@ -37,6 +37,28 @@ dots.forEach(dot => {
   dot.addEventListener('click', () => setTheme(dot.dataset.theme));
 });
 
+/* ── Light / dark mode toggle ──────────────────────────────
+   Sets data-mode on <html>. Dark is default; light is opt-in.
+   Persists across pages via localStorage.
+   ──────────────────────────────────────────────────────── */
+function setMode(mode) {
+  html.setAttribute('data-mode', mode);
+  localStorage.setItem('mode', mode);
+  const btn = document.getElementById('mode-toggle');
+  if (btn) btn.textContent = mode === 'light' ? '☽' : '☀︎';
+}
+
+const savedMode = localStorage.getItem('mode') || 'dark';
+setMode(savedMode);
+
+const modeToggle = document.getElementById('mode-toggle');
+if (modeToggle) {
+  modeToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-mode') || 'dark';
+    setMode(current === 'dark' ? 'light' : 'dark');
+  });
+}
+
 /* ── Nav scroll effect ─────────────────────────────────────
    Adds backdrop blur once the user scrolls past 20px.
    ──────────────────────────────────────────────────────── */
