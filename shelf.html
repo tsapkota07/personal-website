@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="amber">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tirsan Sapkota's reading shelf — books and manga." />
+  <title>Shelf — Tirsan Sapkota</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://tirsansapkota.com/shelf.html" />
+  <meta property="og:title"       content="Shelf — Tirsan Sapkota" />
+  <meta property="og:description" content="Books and manga — wanted to keep using this site, so I built myself something to come back to." />
+  <meta property="og:site_name"   content="Tirsan Sapkota" />
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="Shelf — Tirsan Sapkota" />
+  <meta name="twitter:description" content="Books and manga — wanted to keep using this site, so I built myself something to come back to." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Permanent+Marker&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" id="favicon" href="">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-brand">tirsan.</a>
+    <div class="nav-links">
+      <a href="shelf.html"  class="nav-link active">shelf</a>
+      <a href="resume.html" class="nav-link">résumé</a>
+      <button class="nav-hello" data-open-contact>say hello</button>
+      <div class="theme-switcher" aria-label="Switch theme">
+        <!-- T -->
+        <div class="ts-letter ts-letter--T">
+          <button class="ts-dot" data-theme="amber"  style="--c:1;--r:1;" aria-label="Amber"  title="Amber"></button>
+          <button class="ts-dot" data-theme="sage"   style="--c:2;--r:1;" aria-label="Sage"   title="Sage"></button>
+          <button class="ts-dot" data-theme="mauve"  style="--c:3;--r:1;" aria-label="Mauve"  title="Mauve"></button>
+          <button class="ts-dot" data-theme="rose"   style="--c:2;--r:2;" aria-label="Rose"   title="Rose"></button>
+          <button class="ts-dot" data-theme="slate"  style="--c:2;--r:3;" aria-label="Slate"  title="Slate"></button>
+        </div>
+        <!-- S -->
+        <div class="ts-letter ts-letter--S">
+          <button class="ts-dot" data-theme="forest" style="--c:2;--r:1;" aria-label="Forest" title="Forest"></button>
+          <button class="ts-dot" data-theme="peach"  style="--c:3;--r:1;" aria-label="Peach"  title="Peach"></button>
+          <button class="ts-dot" data-theme="violet" style="--c:1;--r:2;" aria-label="Violet" title="Violet"></button>
+          <button class="ts-dot" data-theme="coral"  style="--c:2;--r:3;" aria-label="Coral"  title="Coral"></button>
+          <button class="ts-dot" data-theme="sky"    style="--c:3;--r:4;" aria-label="Sky"    title="Sky"></button>
+          <button class="ts-dot" data-theme="olive"  style="--c:1;--r:5;" aria-label="Olive"  title="Olive"></button>
+          <button class="ts-dot" data-theme="plum"   style="--c:2;--r:5;" aria-label="Plum"   title="Plum"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main shelf-page">
+
+    <div class="shelf-page-header reveal">
+      <span class="section-label">on my shelf</span>
+      <p class="shelf-page-sub">wanted to keep using this site, so I built myself something to come back to</p>
+    </div>
+
+    <div class="shelf-controls reveal">
+      <div class="shelf-search-wrap">
+        <input
+          type="text"
+          id="shelf-search"
+          class="shelf-search"
+          placeholder="search by title or author..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+      <div class="shelf-controls-row">
+        <div class="filter-group" role="group" aria-label="Filter by type">
+          <button class="filter-btn active" data-filter-type="all">all</button>
+          <button class="filter-btn"        data-filter-type="book">books</button>
+          <button class="filter-btn"        data-filter-type="manga">manga</button>
+        </div>
+        <div class="filter-group" role="group" aria-label="Filter by status">
+          <button class="filter-btn active" data-filter-status="all">all</button>
+          <button class="filter-btn"        data-filter-status="reading">reading</button>
+          <button class="filter-btn"        data-filter-status="finished">finished</button>
+          <button class="filter-btn"        data-filter-status="want">want to read</button>
+        </div>
+        <div class="shelf-sort-wrap">
+          <select id="shelf-sort" class="shelf-sort" aria-label="Sort by">
+            <option value="status">status</option>
+            <option value="title-asc">title A → Z</option>
+            <option value="title-desc">title Z → A</option>
+            <option value="author-asc">author A → Z</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <p class="shelf-count" id="shelf-count">— items</p>
+
+    <div class="shelf-grid" id="shelf-grid"></div>
+    <div class="shelf-empty hidden" id="shelf-empty">
+      <p>nothing found.</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <span>built by tirsan &mdash; <span id="year"></span></span>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contactOverlay" aria-modal="true" role="dialog" aria-labelledby="contactModalTitle">
+    <div class="modal-card" id="contactCard">
+      <button class="modal-close" id="contactClose" aria-label="Close">✕</button>
+
+      <!-- Mini bookshelf header -->
+      <div class="modal-shelf-header">
+        <div class="modal-lamp"></div>
+        <div class="modal-mini-books">
+          <div class="mmb" style="--h:55px;--c:#3a1c1c;"></div>
+          <div class="mmb" style="--h:42px;--c:#1c2e3a;"></div>
+          <div class="mmb" style="--h:62px;--c:#1c3a22;"></div>
+          <div class="mmb" style="--h:48px;--c:#3a1c2e;"></div>
+          <div class="mmb" style="--h:58px;--c:#2a2214;"></div>
+          <div class="mmb" style="--h:44px;--c:#1a1c3a;"></div>
+          <div class="mmb" style="--h:65px;--c:#2e3a1c;"></div>
+          <div class="mmb" style="--h:50px;--c:#3a2a1a;"></div>
+          <div class="mmb" style="--h:40px;--c:#1c3a3a;"></div>
+          <div class="mmb" style="--h:60px;--c:#3a1c1c;"></div>
+          <div class="mmb" style="--h:46px;--c:#2a1a2e;"></div>
+          <div class="mmb" style="--h:54px;--c:#1a2e1a;"></div>
+          <div class="mmb" style="--h:52px;--c:#3a2a1c;"></div>
+          <div class="mmb" style="--h:43px;--c:#1c1a3a;"></div>
+        </div>
+        <div class="modal-lamp"></div>
+        <div class="modal-shelf-plank"></div>
+      </div>
+
+      <!-- Form body -->
+      <div class="modal-body">
+        <h2 class="modal-title" id="contactModalTitle">say hello.</h2>
+        <p class="modal-sub">I read every message.</p>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-field">
+            <label for="c-name">name</label>
+            <input type="text"  id="c-name"    name="name"    required autocomplete="name"  placeholder="your name" />
+            <p class="field-error" id="err-name"></p>
+          </div>
+          <div class="form-field">
+            <label for="c-email">email</label>
+            <input type="email" id="c-email"   name="email"   required autocomplete="email" placeholder="your@email.com" />
+            <p class="field-error" id="err-email"></p>
+          </div>
+          <div class="form-field">
+            <label for="c-message">message</label>
+            <textarea           id="c-message" name="message" required rows="5" placeholder="what's on your mind?"></textarea>
+            <p class="field-error" id="err-message"></p>
+          </div>
+          <button type="submit" id="contactSubmit" class="form-submit">send →</button>
+          <p class="contact-error hidden" id="contactError">something went wrong — try again.</p>
+        </form>
+        <div class="contact-success hidden" id="contactSuccess">
+          <span class="success-check">✓</span>
+          <p>sent. I'll get back to you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="shelf-data.js?v=2"></script>
+  <script src="script.js"></script>
+  <script src="contact.js"></script>
+  <script src="shelf.js"></script>
+  <script src="shelf-editor.js"></script>
+</body>
+</html>

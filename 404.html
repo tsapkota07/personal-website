@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="amber">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Page not found — Tirsan Sapkota" />
+  <title>404 — Tirsan Sapkota</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" id="favicon" href="">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-brand">tirsan.</a>
+    <div class="nav-links">
+      <a href="shelf.html"  class="nav-link">shelf</a>
+      <a href="resume.html" class="nav-link">résumé</a>
+      <div class="theme-switcher" aria-label="Switch theme">
+        <!-- T -->
+        <div class="ts-letter ts-letter--T">
+          <button class="ts-dot" data-theme="amber"  style="--c:1;--r:1;" aria-label="Amber"  title="Amber"></button>
+          <button class="ts-dot" data-theme="sage"   style="--c:2;--r:1;" aria-label="Sage"   title="Sage"></button>
+          <button class="ts-dot" data-theme="mauve"  style="--c:3;--r:1;" aria-label="Mauve"  title="Mauve"></button>
+          <button class="ts-dot" data-theme="rose"   style="--c:2;--r:2;" aria-label="Rose"   title="Rose"></button>
+          <button class="ts-dot" data-theme="slate"  style="--c:2;--r:3;" aria-label="Slate"  title="Slate"></button>
+        </div>
+        <!-- S -->
+        <div class="ts-letter ts-letter--S">
+          <button class="ts-dot" data-theme="forest" style="--c:2;--r:1;" aria-label="Forest" title="Forest"></button>
+          <button class="ts-dot" data-theme="peach"  style="--c:3;--r:1;" aria-label="Peach"  title="Peach"></button>
+          <button class="ts-dot" data-theme="violet" style="--c:1;--r:2;" aria-label="Violet" title="Violet"></button>
+          <button class="ts-dot" data-theme="coral"  style="--c:2;--r:3;" aria-label="Coral"  title="Coral"></button>
+          <button class="ts-dot" data-theme="sky"    style="--c:3;--r:4;" aria-label="Sky"    title="Sky"></button>
+          <button class="ts-dot" data-theme="olive"  style="--c:1;--r:5;" aria-label="Olive"  title="Olive"></button>
+          <button class="ts-dot" data-theme="plum"   style="--c:2;--r:5;" aria-label="Plum"   title="Plum"></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <section class="not-found-section reveal">
+      <span class="not-found-code">404</span>
+      <p class="not-found-heading">this page doesn't exist.</p>
+      <p class="not-found-sub">wrong shelf, wrong aisle.</p>
+      <a href="index.html" class="contact-link" style="margin-top: 2rem; display: inline-block;">back home →</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>built by tirsan &mdash; <span id="year"></span></span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

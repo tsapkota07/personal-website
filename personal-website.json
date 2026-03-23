@@ -1,0 +1,31 @@
+{
+  "_source": "personal-website",
+
+  "name": "Personal Website",
+  "url": "https://tirsansapkota.com",
+  "repo": "https://github.com/tsapkota07/personal-website",
+  "status": "live",
+  "year": "2025",
+  "tech": ["HTML", "CSS", "JavaScript", "Nginx", "Oracle Cloud", "Let's Encrypt"],
+  "bullets": [
+    "Built a fully static personal website from scratch using plain HTML, CSS, and vanilla JavaScript — no frameworks, no build step, no dependencies.",
+    "Designed and implemented a 12-theme system using CSS custom properties, with theme preference persisted to localStorage and applied instantly across all pages.",
+    "Built a dynamic SVG favicon that updates its color in real time to match the active theme using the CSS computed style API and base64-encoded data URIs.",
+    "Implemented a reading shelf page with real-time search, multi-axis filtering (type and status), and sortable grid rendering — all client-side with no backend.",
+    "Designed a manga card flip interaction using CSS 3D transforms (rotateY, preserve-3d, backface-visibility) that reveals the current chapter on the back face.",
+    "Styled the flip card back face with a manga panel aesthetic: radial speed lines via repeating-conic-gradient, an inner border, and the Permanent Marker font for the chapter number.",
+    "Built a localhost-only shelf editor (guarded by location.hostname) with add, edit, and delete functionality, localStorage persistence, and a one-click export that downloads a ready-to-deploy shelf-data.js file.",
+    "Used a MutationObserver with disconnect/reconnect pattern to detect grid re-renders and re-inject editor controls without causing infinite observer loops.",
+    "Implemented a contact form modal with client-side validation, Formspree integration, a book page-flip CSS animation on the submit button, and a minimum 1-second loading state for feedback consistency.",
+    "Built a PDF resume viewer modal that lazy-loads the PDF only when opened, avoiding unnecessary network requests on page load.",
+    "Added Open Graph and Twitter Card meta tags across all pages for rich link previews on Discord, iMessage, Slack, and other platforms.",
+    "Created a custom 404 page that matches the site's design system, with a working theme switcher and a literary-themed error message.",
+    "Wrote a deploy script using rsync that syncs only production-relevant files to an Oracle Cloud VM, verifies the Nginx configuration, and reloads the server — all in one command.",
+    "Configured Nginx as a reverse proxy with HTTPS via Let's Encrypt (Certbot), HTTP-to-HTTPS redirect, custom 404 handling, and static file serving.",
+    "Implemented responsive design with mobile-specific breakpoints for the navigation bar, shelf grid, and resume layout.",
+    "Built the theme switcher as a TS monogram (initials) made entirely of colored CSS dot buttons arranged in CSS grid layouts — no images used.",
+    "Designed a modal contact form with a decorative mini bookshelf header built from CSS-animated elements, two glowing accent-colored lamps, and a brick wall SVG background pattern.",
+    "Used event delegation on the shelf grid to handle both card flip toggling and chapter increment/decrement controls with a single listener, avoiding stale handler accumulation across re-renders.",
+    "Structured resume data in a modular personal-website.json file designed for programmatic ingestion by a future resume-updater project that will auto-generate and tailor resumes."
+  ]
+}
