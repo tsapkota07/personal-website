@@ -545,41 +545,50 @@ a,
 .projects-grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 .project-card {
   display: block;
   text-decoration: none;
   color: inherit;
-  padding: 1.5rem;
-  border: 1px solid var(--bg-border);
-  border-radius: 8px;
-  background: var(--bg-surface);
+  padding: 1.4rem 0 1.4rem 1rem;
+  border-top: 1px solid var(--bg-border);
   position: relative;
-  overflow: hidden;
+}
+
+.project-card:last-child {
+  border-bottom: 1px solid var(--bg-border);
 }
 
 .project-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: var(--accent-soft);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.2s ease;
 }
 
-.project-card:hover              { border-color: var(--accent-border); }
 .project-card:hover::before      { opacity: 1; }
 
 .project-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
-.project-title { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+.project-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.project-card:hover .project-title { color: var(--accent); }
 
 .project-arrow {
   color: var(--text-dim);
@@ -595,25 +604,25 @@ a,
   font-size: 0.88rem;
   color: var(--text-muted);
   line-height: 1.7;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
   list-style: none;
 }
 
 .project-tags li {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--accent);
-  background: var(--accent-soft);
-  border: 1px solid var(--accent-border);
-  padding: 0.2rem 0.55rem;
-  border-radius: 4px;
+  color: var(--text-dim);
   letter-spacing: 0.02em;
+}
+
+.project-tags li + li::before {
+  content: ' · ';
+  color: var(--text-dim);
 }
 
 /* ============================================================
@@ -789,10 +798,9 @@ a,
    COMING SOON PROJECT CARD
    ============================================================ */
 .project-card--soon {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: default;
   pointer-events: none;
-  border-style: dashed;
 }
 
 .soon-badge {

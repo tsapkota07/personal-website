@@ -63,7 +63,7 @@
       <div class="resume-header-row">
         <span class="section-label" style="margin-bottom:0;">résumé</span>
         <div class="resume-header-actions">
-          <a href="Resume_.pdf" download="Tirsan_Sapkota_Resume.pdf" class="contact-link">download pdf ↓</a>
+          <a href="resume.pdf" download="Tirsan_Sapkota_Resume.pdf" class="contact-link">download pdf ↓</a>
           <button class="contact-link" id="resumePdfBtn">view pdf ↗</button>
         </div>
       </div>
@@ -361,7 +361,7 @@
       <div class="modal-body modal-body--pdf">
         <div class="pdf-topbar">
           <h2 class="modal-title" style="margin:0;">résumé.</h2>
-          <a href="Resume_.pdf" download="Tirsan_Sapkota_Resume.pdf" class="contact-link">download ↓</a>
+          <a href="resume.pdf" download="Tirsan_Sapkota_Resume.pdf" class="contact-link">download ↓</a>
         </div>
         <iframe
           class="resume-pdf-frame"
@@ -382,7 +382,7 @@
 
       const frame = document.querySelector('.resume-pdf-frame');
       function openPdf() {
-        if (!frame.src) frame.src = 'Resume_.pdf';
+        if (!frame.src) frame.src = 'resume.pdf';
         overlay.classList.add('open');
         document.body.style.overflow = 'hidden';
       }

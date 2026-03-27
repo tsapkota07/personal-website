@@ -11,13 +11,10 @@ const STATUS_LABEL = {
   want:     'want to read',
 };
 
-// Used for sorting by status — reading first, then finished, then want
-const STATUS_ORDER = { reading: 0, finished: 1, want: 2 };
-
 // ── State ──────────────────────────────────────────────────
 let activeType   = 'all';   // 'all' | 'book' | 'manga'
 let activeStatus = 'all';   // 'all' | 'reading' | 'finished' | 'want'
-let activeSort   = 'status'; // default: reading first
+let activeSort   = 'none'; // default: books before manga
 let searchQuery  = '';
 
 // ── DOM refs ───────────────────────────────────────────────
@@ -46,8 +43,10 @@ function getFiltered() {
         case 'title-asc':  return a.title.localeCompare(b.title);
         case 'title-desc': return b.title.localeCompare(a.title);
         case 'author-asc': return a.author.localeCompare(b.author);
-        case 'status':     return STATUS_ORDER[a.status] - STATUS_ORDER[b.status];
-        default:           return 0;
+        case 'none':
+          if (a.type !== b.type) return a.type === 'book' ? -1 : 1;
+          return 0;
+default:           return 0;
       }
     });
 }

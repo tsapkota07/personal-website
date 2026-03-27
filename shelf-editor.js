@@ -11,11 +11,34 @@
   'use strict';
 
   // ── Guard ─────────────────────────────────────────────────
-  const isLocal =
-    location.hostname === 'localhost' ||
-    location.hostname === '127.0.0.1' ||
-    location.hostname === '';
-  if (!isLocal) return;
+  // SHA-256 hash of the secret stored in the internship tracker dev panel.
+  // The secret itself never lives here — only its hash.
+  const EDIT_KEY_HASH = 'f502d5e792eb995ec198515c509d2bec0074fecab408ba931620ccfb24f52b6e';
+
+  async function resolveAccess() {
+    if (location.hostname === 'localhost' ||
+        location.hostname === '127.0.0.1' ||
+        location.hostname === '') return true;
+
+    if (sessionStorage.getItem('shelf_edit') === '1') return true;
+
+    const key = new URLSearchParams(location.search).get('shelf_edit');
+    if (!key) return false;
+
+    const hash = Array.from(
+      new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(key)))
+    ).map(b => b.toString(16).padStart(2, '0')).join('');
+
+    if (hash === EDIT_KEY_HASH) {
+      sessionStorage.setItem('shelf_edit', '1');
+      const url = new URL(location.href);
+      url.searchParams.delete('shelf_edit');
+      history.replaceState(null, '', url.toString());
+      return true;
+    }
+
+    return false;
+  }
 
   // ── State ─────────────────────────────────────────────────
   const STORAGE_KEY = 'shelf_editor_v1';
@@ -434,7 +457,9 @@ ${entries}
   }
 
   // ── Init ──────────────────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
+    if (!await resolveAccess()) return;
+
     loadSaved();
 
     // Inject toggle button into controls row
