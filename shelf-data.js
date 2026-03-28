@@ -26,7 +26,7 @@ const SHELF = [
     status: 'finished',
     color: '#2e1a0e',
     initials: 'SI',
-    image: 'https://covers.openlibrary.org/b/isbn/9780143064329-L.jpg',
+    image: 'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1421251028i/18514068.jpg',
   },
   {
     id: 2,
@@ -240,17 +240,6 @@ const SHELF = [
     image: 'https://myanimelist.net/images/manga/2/238873l.jpg',
   },
   {
-    id: 23,
-    type: 'manga',
-    title: 'SSS-Class Suicide Hunter',
-    author: 'Shin Noah',
-    status: 'reading',
-    color: '#101020',
-    initials: 'SS',
-    chapter: '115',
-    image: 'https://myanimelist.net/images/manga/1/263446l.jpg',
-  },
-  {
     id: 24,
     type: 'manga',
     title: 'Myst, Might, Mayhem',
@@ -270,7 +259,7 @@ const SHELF = [
     color: '#101020',
     initials: 'TS',
     chapter: '94',
-    image: 'https://uploads.mangadex.org/covers/abe0bb3b-a05e-4602-aa4f-578e0b962cf9/79b55c2b-0fb4-4569-8c48-aa1e1ff97eb7.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx170400-yMIuOIboWuoO.jpg',
   },
   {
     id: 26,
@@ -336,7 +325,7 @@ const SHELF = [
     color: '#101020',
     initials: 'NB',
     chapter: '202',
-    image: 'https://myanimelist.net/images/manga/2/275074l.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx119521-qYqxFvn0NnXo.png',
   },
   {
     id: 33,
@@ -393,17 +382,6 @@ const SHELF = [
     initials: 'SV',
     chapter: '62',
     image: 'https://myanimelist.net/images/manga/1/120529l.jpg',
-  },
-  {
-    id: 39,
-    type: 'manga',
-    title: 'Crimson Karma',
-    author: 'Gado',
-    status: 'finished',
-    color: '#101020',
-    initials: 'CK',
-    chapter: '118',
-    image: 'https://myanimelist.net/images/manga/3/331149l.jpg',
   },
   {
     id: 40,
@@ -469,7 +447,7 @@ const SHELF = [
     color: '#101020',
     initials: 'HS',
     chapter: '117',
-    image: 'https://uploads.mangadex.org/covers/27b5a8ba-818c-413f-9b50-ef74e4cbf62c/20a0b289-c4f6-4229-b064-7391a84c3299.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx107720-nIiuP9q4R1Uh.jpg',
   },
   {
     id: 47,
@@ -644,7 +622,7 @@ const SHELF = [
     status: 'reading',
     color: '#101020',
     initials: 'AS',
-    chapter: '134',
+    chapter: '175',
     image: 'https://myanimelist.net/images/manga/3/268566l.jpg',
   },
   {
@@ -655,7 +633,7 @@ const SHELF = [
     status: 'reading',
     color: '#101020',
     initials: 'BC',
-    chapter: '378',
+    chapter: '386',
     image: 'https://myanimelist.net/images/manga/2/166254l.jpg',
   },
   {
@@ -672,13 +650,14 @@ const SHELF = [
   {
     id: 66,
     type: 'manga',
-    title: 'Tondemo Skill de Isekai Hourou Meshi',
+    title: 'Campfire Cooking in Another World with my absurd skill',
     author: 'Ren Eguchi & Akagishi K',
     status: 'reading',
     color: '#101020',
     initials: 'TS',
-    chapter: '59',
+    chapter: '65',
     image: 'https://myanimelist.net/images/manga/1/204823l.jpg',
+    note: 'here.',
   },
   {
     id: 67,
@@ -716,7 +695,7 @@ const SHELF = [
   {
     id: 70,
     type: 'manga',
-    title: 'Death March kara Hajimaru Isekai Kyousoukyoku',
+    title: 'Death March To The Parallel World Rhapsody',
     author: 'Hiro Ainana & Ayamegumu',
     status: 'reading',
     color: '#101020',
@@ -1140,7 +1119,7 @@ const SHELF = [
     color: '#101020',
     initials: 'SS',
     chapter: '162',
-    image: 'https://uploads.mangadex.org/covers/85a8ebda-9959-4244-ad03-a2d9f6a746a2/3b1c5579-b65b-41e9-9851-74154ce68e02.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx149332-adkSyOFY3c5U.jpg',
   },
   {
     id: 109,
@@ -1173,7 +1152,7 @@ const SHELF = [
     color: '#101020',
     initials: 'DM',
     chapter: '51',
-    image: 'https://uploads.mangadex.org/covers/de24e7e7-1be3-41a8-b02b-fe4c7c370572/034ee7b1-1110-473e-a85e-87464f9b8290.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx164122-zdeLVK8DfxBt.jpg',
   },
   {
     id: 112,
@@ -1239,7 +1218,7 @@ const SHELF = [
     color: '#101020',
     initials: 'NE',
     chapter: '106',
-    image: 'https://uploads.mangadex.org/covers/6f18c4ef-3eb6-40ee-98a4-507343f05855/de9caf95-f1b2-4613-bb1f-ca48101ed066.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx152128-hk1Dq8zlEPVn.png',
   },
   {
     id: 118,
@@ -1345,10 +1324,10 @@ const SHELF = [
     type: 'manga',
     title: 'Boundless Necromancer',
     author: 'Seongmin & 2W',
-    status: 'reading',
+    status: 'finished',
     color: '#101020',
     initials: 'BN',
-    chapter: '139',
+    chapter: '177',
     image: 'https://myanimelist.net/images/manga/3/275562l.jpg',
   },
   {
@@ -1359,24 +1338,24 @@ const SHELF = [
     status: 'reading',
     color: '#101020',
     initials: 'CF',
-    chapter: '120',
+    chapter: '121',
     image: 'https://myanimelist.net/images/manga/2/279966l.jpg',
   },
   {
     id: 129,
     type: 'manga',
-    title: 'Doctor, Live Again',
+    title: 'Doctor\'s Rebirth',
     author: 'Lee Jinseok & Kidari Studio',
     status: 'reading',
     color: '#101020',
     initials: 'DL',
     chapter: '185',
-    image: 'https://uploads.mangadex.org/covers/8acdc047-6c6b-4603-8ee9-55f03421fceb/951166ee-792c-4e18-845e-9e85d71d5cc7.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/b129579-4CjDJYnWI8el.jpg',
   },
   {
     id: 130,
     type: 'manga',
-    title: 'Doctor Player',
+    title: 'Dr. Player',
     author: 'Yuin & Kidari Studio',
     status: 'finished',
     color: '#101020',
@@ -1393,7 +1372,7 @@ const SHELF = [
     color: '#101020',
     initials: 'CY',
     chapter: '130',
-    image: 'https://uploads.mangadex.org/covers/b2379cf4-3915-4577-b4df-329fc9900620/0b81dca9-3326-4278-b4bd-2ddb51b4c70b.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx160693-IAEQE4iXLbo5.jpg',
   },
   {
     id: 132,
@@ -1437,7 +1416,7 @@ const SHELF = [
     color: '#101020',
     initials: 'AS',
     chapter: '85',
-    image: 'https://uploads.mangadex.org/covers/43848429-00b1-4215-bb0c-31973fe705cf/46d4a21f-cd9f-4b0b-9033-e41daa033944.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx160890-0QhBxaDrP0Nd.jpg',
   },
   {
     id: 136,
@@ -1453,7 +1432,7 @@ const SHELF = [
   {
     id: 137,
     type: 'manga',
-    title: 'Return of the War God',
+    title: 'Chronicles of the Martial God\'s Return',
     author: 'Various',
     status: 'reading',
     color: '#101020',
@@ -1464,7 +1443,7 @@ const SHELF = [
   {
     id: 138,
     type: 'manga',
-    title: 'Genius Medicinal Mage',
+    title: 'Drug-Eating Genius Mage',
     author: 'Various',
     status: 'finished',
     color: '#101020',
@@ -1475,13 +1454,13 @@ const SHELF = [
   {
     id: 139,
     type: 'manga',
-    title: 'Murim Fitness Trainer',
+    title: 'Genius Martial Arts Trainer',
     author: 'Various',
     status: 'reading',
     color: '#101020',
     initials: 'MF',
     chapter: '95',
-    image: 'https://uploads.mangadex.org/covers/a221707e-649a-4455-ba76-8e1a44439db9/67c08713-b24a-4c5d-983e-ae757b8310f3.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx179655-lUlLMR1AmJXv.jpg',
   },
   {
     id: 140,
@@ -1607,13 +1586,13 @@ const SHELF = [
   {
     id: 151,
     type: 'manga',
-    title: 'Dungeon Farmer',
+    title: 'Solo Farming in the Tower',
     author: 'Various',
     status: 'reading',
     color: '#101020',
     initials: 'DF',
     chapter: '107',
-    image: 'https://uploads.mangadex.org/covers/f461e344-2385-46b5-83b8-8776f5ea65d0/88c8bf13-56be-42df-af48-8be959d3f768.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx166658-jbtqReVgxdqH.jpg',
   },
   {
     id: 152,
@@ -1679,7 +1658,7 @@ const SHELF = [
     color: '#101020',
     initials: 'RF',
     chapter: '83',
-    image: 'https://uploads.mangadex.org/covers/00296c8d-a815-4fdd-b4b8-c79c550ee875/520bf339-fb62-46d7-b22a-84866b1c79a4.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx176812-fXxJHqdO5Koo.png',
   },
   {
     id: 158,
@@ -1728,7 +1707,7 @@ const SHELF = [
   {
     id: 162,
     type: 'manga',
-    title: 'Bountiful Harvest, Demon Lord!',
+    title: 'What a Bountiful Harvest, Demon Lord!',
     author: 'Various',
     status: 'reading',
     color: '#101020',
@@ -1767,7 +1746,7 @@ const SHELF = [
     color: '#101020',
     initials: 'YT',
     chapter: '95',
-    image: 'https://uploads.mangadex.org/covers/9d6fce2b-3a2c-4f8e-853c-a6eadba713cd/d470a6c3-2366-4cda-9568-ba7c9fdd9df7.jpg',
+    image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx138366-DC3t5MSv6v05.jpg',
   }
 
 ];
