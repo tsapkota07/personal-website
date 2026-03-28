@@ -419,7 +419,7 @@ const SHELF = [
   {
     id: 43,
     type: 'manga',
-    title: 'Goodnight Punpun',
+    title: 'Oyasumi Punpun',
     author: 'Inio Asano',
     status: 'finished',
     color: '#101020',
@@ -772,12 +772,12 @@ const SHELF = [
   {
     id: 77,
     type: 'manga',
-    title: 'Jigokuraku',
+    title: 'Hell\'s paradise',
     author: 'Yuuji Kaku',
     status: 'finished',
     color: '#101020',
     initials: 'JG',
-    chapter: '128',
+    chapter: '127',
     image: 'https://myanimelist.net/images/manga/2/208522l.jpg',
   },
   {
@@ -882,7 +882,7 @@ const SHELF = [
   {
     id: 87,
     type: 'manga',
-    title: 'Login Murim',
+    title: 'Murim Login',
     author: 'Zerobic & Jang Cheol-Byeok',
     status: 'reading',
     color: '#101020',
@@ -948,7 +948,7 @@ const SHELF = [
   {
     id: 93,
     type: 'manga',
-    title: 'Meccha Shoukan Sareta Ken',
+    title: 'Oversummoned, Overpowered, and Over it',
     author: 'Sai Sumimori & Wasabi Mukuno',
     status: 'reading',
     color: '#101020',
@@ -1080,7 +1080,7 @@ const SHELF = [
   {
     id: 105,
     type: 'manga',
-    title: 'Kumo desu ga, Nani ka?',
+    title: 'So I\'m a spider, so what?',
     author: 'Okina Baba & Asahiro Kakashi',
     status: 'reading',
     color: '#101020',
@@ -1168,7 +1168,7 @@ const SHELF = [
   {
     id: 113,
     type: 'manga',
-    title: 'Kage no Jitsuryokusha ni Naritakute!',
+    title: 'The Eminence In Shadow',
     author: 'Daisuke Aizawa & Anri Sakano',
     status: 'reading',
     color: '#101020',
@@ -1300,7 +1300,7 @@ const SHELF = [
   {
     id: 125,
     type: 'manga',
-    title: 'Lout of Count’s Family',
+    title: 'Trash of the count\'s family',
     author: 'PAN4 & PING',
     status: 'reading',
     color: '#101020',
@@ -1393,7 +1393,7 @@ const SHELF = [
     status: 'finished',
     color: '#101020',
     initials: 'HH',
-    chapter: '61',
+    chapter: '60',
     image: 'https://myanimelist.net/images/manga/1/264153l.jpg',
   },
   {
@@ -1465,7 +1465,7 @@ const SHELF = [
   {
     id: 140,
     type: 'manga',
-    title: 'Perfect Hybrid',
+    title: 'Genius of the unique lineage',
     author: 'Various',
     status: 'finished',
     color: '#101020',
@@ -1476,7 +1476,7 @@ const SHELF = [
   {
     id: 141,
     type: 'manga',
-    title: 'My Master is a Backseat Gamer',
+    title: 'Heavenly Demon Instructor',
     author: 'Various',
     status: 'finished',
     color: '#101020',
@@ -1696,7 +1696,7 @@ const SHELF = [
   {
     id: 161,
     type: 'manga',
-    title: 'Holy Power of Modern Medicine',
+    title: 'To Hell with being a saint',
     author: 'Various',
     status: 'reading',
     color: '#101020',
