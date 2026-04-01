@@ -361,28 +361,32 @@ a,
 .theme-switcher {
   display: flex;
   align-items: flex-end;
-  gap: 7px;
+  gap: 13px;
 }
 
 /* Each letter is a small CSS grid */
 .ts-letter {
   display: grid;
-  grid-template-columns: repeat(3, 8px);
+  grid-template-columns: repeat(3, 11px);
   gap: 3px;
 }
 
 .ts-letter--T {
-  grid-template-columns: repeat(3, 10px);
-  grid-template-rows:    repeat(3, 10px);
-  gap: 4px;
+  grid-template-columns: repeat(3, 11px);
+  grid-template-rows:    repeat(3, 11px);
 }
-.ts-letter--S { grid-template-rows: repeat(5, 8px); }
+
+.ts-letter--T .ts-dot {
+  width:  11px;
+  height: 11px;
+}
+.ts-letter--S { grid-template-rows: repeat(5, 11px); }
 
 .ts-dot {
   grid-column: var(--c);
   grid-row:    var(--r);
-  width:  8px;
-  height: 8px;
+  width:  11px;
+  height: 11px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -390,12 +394,6 @@ a,
   background: var(--dot-color);
   opacity: 0.28;
   transition: opacity 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease;
-}
-
-/* T dots are slightly larger */
-.ts-letter--T .ts-dot {
-  width:  10px;
-  height: 10px;
 }
 
 .ts-dot:hover  { opacity: 0.75; transform: scale(1.3); }
