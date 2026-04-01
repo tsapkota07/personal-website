@@ -1747,6 +1747,16 @@ const SHELF = [
     initials: 'YT',
     chapter: '95',
     image: 'https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx138366-DC3t5MSv6v05.jpg',
+  },
+  {
+    id: 166,
+    type: 'book',
+    title: 'Dungeon Crawler Carl',
+    author: 'Matt Dinniman',
+    status: 'finished',
+    color: '#1a0a0a',
+    initials: 'DC',
+    image: 'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1734203042i/56791389.jpg',
   }
 
 ];
