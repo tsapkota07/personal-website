@@ -76,9 +76,13 @@ function render() {
   */
   const hasChapter = item =>
     item.type === 'manga' && item.chapter != null && item.chapter !== '';
+  const hasPages = item =>
+    item.type === 'book' && item.pages != null && item.pages !== '' && !item.series;
+  const hasSeries = item =>
+    item.series === true && item.glyph;
 
   grid.innerHTML = items.map(item => {
-    const flippable = hasChapter(item);
+    const flippable = hasChapter(item) || hasPages(item) || hasSeries(item);
     return `
     <div class="shelf-card" data-id="${item.id}">
       <div class="shelf-card-flip${flippable ? ' shelf-card-flip--clickable' : ''}">
@@ -87,10 +91,19 @@ function render() {
             <span class="shelf-card-initials">${escapeHtml(item.initials)}</span>
             ${item.image ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" class="shelf-card-img" loading="lazy" onerror="this.style.display='none'">` : ''}
           </div>
-          ${flippable ? `
+          ${hasChapter(item) ? `
           <div class="shelf-card-back">
             <span class="shelf-card-chapter-label">chapter</span>
             <span class="shelf-card-chapter-num">${escapeHtml(String(item.chapter))}</span>
+          </div>` : ''}
+          ${hasPages(item) ? `
+          <div class="shelf-card-back">
+            <span class="shelf-card-chapter-label">pages</span>
+            <span class="shelf-card-chapter-num">${escapeHtml(String(item.pages))}</span>
+          </div>` : ''}
+          ${hasSeries(item) ? `
+          <div class="shelf-card-back shelf-card-back--series">
+            <span class="shelf-card-series-glyph">${escapeHtml(item.glyph)}</span>
           </div>` : ''}
         </div>
       </div>
@@ -164,5 +177,56 @@ render();
 // ── Grid event delegation ───────────────────────────────────
 grid.addEventListener('click', e => {
   const flip = e.target.closest('.shelf-card-flip--clickable');
-  if (flip) flip.classList.toggle('flipped');
+  if (!flip) return;
+  flip.classList.toggle('flipped');
+
+  // Easter egg: track series card flip to back
+  if (flip.classList.contains('flipped')) {
+    const card = flip.closest('.shelf-card');
+    if (card) {
+      const id = parseInt(card.dataset.id, 10);
+      const item = SHELF.find(s => s.id === id);
+      if (item && item.series) trackEasterEgg(id);
+    }
+  }
 });
+
+// ── Easter egg tracking ─────────────────────────────────────
+function trackEasterEgg(id) {
+  const found = JSON.parse(sessionStorage.getItem('shelf_eggs') || '[]');
+  if (found.includes(id)) return;
+  found.push(id);
+  sessionStorage.setItem('shelf_eggs', JSON.stringify(found));
+
+  const total = SHELF.filter(s => s.series).length;
+  const count = found.length;
+
+  showEggToast(count, total);
+
+  if (count >= total) {
+    sessionStorage.setItem('library_unlocked', '1');
+    if (typeof showLibraryToggle === 'function') showLibraryToggle();
+  }
+}
+
+function showEggToast(count, total) {
+  const existing = document.getElementById('egg-toast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.id = 'egg-toast';
+  toast.className = 'egg-toast';
+
+  if (count >= total) {
+    toast.innerHTML = `<span class="egg-toast-icon">✦</span> both secrets found — <strong>library mode unlocked</strong>`;
+  } else {
+    toast.innerHTML = `<span class="egg-toast-icon">✦</span> secret found — <strong>${count} of ${total}</strong>`;
+  }
+
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => toast.classList.add('egg-toast--visible'));
+  setTimeout(() => {
+    toast.classList.remove('egg-toast--visible');
+    setTimeout(() => toast.remove(), 400);
+  }, 3500);
+}

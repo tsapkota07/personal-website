@@ -1922,3 +1922,405 @@ button.contact-link {
   .resume-skill-group { flex-direction: column; gap: 0.35rem; }
   .resume-skill-group-label { min-width: unset; }
 }
+
+/* ============================================================
+   SERIES CARD BACK — glyph with pulsing glow
+   ============================================================ */
+.shelf-card-back--series {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shelf-card-series-glyph {
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  color: rgba(255, 255, 255, 0.88);
+  animation: glyph-pulse 2.8s ease-in-out infinite;
+  user-select: none;
+}
+
+@keyframes glyph-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    opacity: 1;
+    text-shadow:
+      0 0 16px rgba(255, 255, 255, 0.9),
+      0 0 40px rgba(255, 255, 255, 0.4),
+      0 0 70px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* ============================================================
+   EASTER EGG TOAST
+   ============================================================ */
+.egg-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(0.75rem);
+  background: rgba(14, 12, 20, 0.92);
+  color: #e8e0f0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.65rem 1.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(14px);
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.egg-toast--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.egg-toast-icon {
+  margin-right: 0.45rem;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   LIBRARY MODE — wood ring picker + wood backgrounds
+   ============================================================ */
+html {
+  transition: background-color 0.7s ease;
+}
+
+/* When any wood is active, body becomes transparent */
+html[data-library]:not([data-library="none"]) body {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* ── Readability fixes ───────────────────────────────────────
+   Dark woods look great but kill contrast in light mode.
+   Force dark-mode color vars when the wood is darker than the
+   light-mode text (#2a2520), so text stays visible.
+   Also add a subtle text-shadow to freestanding page text
+   in all library modes to lift it off the texture.
+   ─────────────────────────────────────────────────────────── */
+html[data-mode="light"][data-library="mahogany"],
+html[data-mode="light"][data-library="walnut"],
+html[data-mode="light"][data-library="cherry"],
+html[data-mode="light"][data-library="ebony"] {
+  --text:        #e8e3d9;
+  --text-dim:    #c8c0b0;
+  --text-muted:  #8a8070;
+  --bg:          #1a1917;
+  --bg-surface:  #211f1c;
+  --bg-border:   #2c2a26;
+}
+
+/* Lift freestanding text off the wood texture in all library modes */
+html[data-library]:not([data-library="none"]) h1,
+html[data-library]:not([data-library="none"]) h2,
+html[data-library]:not([data-library="none"]) h3,
+html[data-library]:not([data-library="none"]) p,
+html[data-library]:not([data-library="none"]) .nav-link,
+html[data-library]:not([data-library="none"]) .nav-brand {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Ring picker (SVG arc segments) ─────────────────────── */
+#library-ring {
+  flex-shrink: 0;
+  display: block;
+}
+
+.library-ring-seg {
+  fill: var(--bg-border);
+  cursor: pointer;
+  transition: fill 0.15s ease;
+}
+
+/* ── Wood patterns ───────────────────────────────────────── */
+
+html[data-library]:not([data-library="none"]) {
+  background-attachment: fixed;
+}
+
+/* Mahogany — diagonal interlocked grain, ribbon-like shimmer */
+html[data-library="mahogany"] {
+  background-color: #2e160a;
+  background-image:
+    repeating-linear-gradient(
+      105deg,
+      transparent 0, transparent 6px,
+      rgba(0,0,0,.12) 6px, rgba(0,0,0,.12) 7px,
+      transparent 7px, transparent 14px,
+      rgba(180,70,10,.07) 14px, rgba(180,70,10,.07) 15px
+    ),
+    repeating-linear-gradient(
+      75deg,
+      transparent 0, transparent 20px,
+      rgba(255,120,40,.04) 20px, rgba(255,120,40,.04) 21px
+    ),
+    radial-gradient(ellipse 200% 60% at 50% 0%, rgba(120,40,0,.3) 0%, transparent 70%);
+}
+html[data-mode="light"][data-library="mahogany"] {
+  background-color: #8b5a2b;
+  background-image:
+    repeating-linear-gradient(
+      105deg,
+      transparent 0, transparent 6px,
+      rgba(0,0,0,.06) 6px, rgba(0,0,0,.06) 7px,
+      transparent 7px, transparent 14px,
+      rgba(200,100,30,.05) 14px, rgba(200,100,30,.05) 15px
+    ),
+    repeating-linear-gradient(
+      75deg,
+      transparent 0, transparent 20px,
+      rgba(0,0,0,.03) 20px, rgba(0,0,0,.03) 21px
+    ),
+    radial-gradient(ellipse 200% 60% at 50% 0%, rgba(220,130,50,.15) 0%, transparent 70%);
+}
+
+/* Oak — wide cathedral grain, pronounced medullary rays */
+html[data-library="oak"] {
+  background-color: #4a3210;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 22px,
+      rgba(0,0,0,.1) 22px, rgba(0,0,0,.1) 24px,
+      transparent 24px, transparent 50px,
+      rgba(150,90,10,.08) 50px, rgba(150,90,10,.08) 52px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 5px,
+      rgba(255,160,40,.04) 5px, rgba(255,160,40,.04) 6px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0, transparent 60px,
+      rgba(0,0,0,.06) 60px, rgba(0,0,0,.06) 61px
+    );
+}
+html[data-mode="light"][data-library="oak"] {
+  background-color: #c8922e;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 22px,
+      rgba(0,0,0,.05) 22px, rgba(0,0,0,.05) 24px,
+      transparent 24px, transparent 50px,
+      rgba(210,150,40,.06) 50px, rgba(210,150,40,.06) 52px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 5px,
+      rgba(0,0,0,.025) 5px, rgba(0,0,0,.025) 6px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0, transparent 60px,
+      rgba(255,210,80,.05) 60px, rgba(255,210,80,.05) 61px
+    );
+}
+
+/* Walnut — ultra-tight straight grain, almost like carbon fiber */
+html[data-library="walnut"] {
+  background-color: #180a02;
+  background-image:
+    repeating-linear-gradient(
+      91deg,
+      transparent 0, transparent 2px,
+      rgba(255,255,255,.06) 2px, rgba(255,255,255,.06) 3px,
+      transparent 3px, transparent 5px,
+      rgba(0,0,0,.12) 5px, rgba(0,0,0,.12) 6px
+    ),
+    repeating-linear-gradient(
+      91.5deg,
+      transparent 0, transparent 10px,
+      rgba(255,255,255,.03) 10px, rgba(255,255,255,.03) 11px
+    ),
+    radial-gradient(ellipse 120% 40% at 50% 100%, rgba(0,0,0,.5) 0%, transparent 70%);
+}
+html[data-mode="light"][data-library="walnut"] {
+  background-color: #6b3a18;
+  background-image:
+    repeating-linear-gradient(
+      91deg,
+      transparent 0, transparent 2px,
+      rgba(0,0,0,.08) 2px, rgba(0,0,0,.08) 3px,
+      transparent 3px, transparent 5px,
+      rgba(90,40,10,.06) 5px, rgba(90,40,10,.06) 6px
+    ),
+    repeating-linear-gradient(
+      91.5deg,
+      transparent 0, transparent 10px,
+      rgba(0,0,0,.04) 10px, rgba(0,0,0,.04) 11px
+    ),
+    radial-gradient(ellipse 120% 40% at 50% 100%, rgba(0,0,0,.2) 0%, transparent 70%);
+}
+
+/* Cherry — fine wavy figure, warm red luster */
+html[data-library="cherry"] {
+  background-color: #300808;
+  background-image:
+    repeating-linear-gradient(
+      88deg,
+      transparent 0, transparent 4px,
+      rgba(0,0,0,.1) 4px, rgba(0,0,0,.1) 5px
+    ),
+    repeating-linear-gradient(
+      92deg,
+      transparent 0, transparent 4px,
+      rgba(180,40,20,.06) 4px, rgba(180,40,20,.06) 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 12px,
+      rgba(255,80,40,.04) 12px, rgba(255,80,40,.04) 13px
+    ),
+    radial-gradient(ellipse 160% 50% at 30% 50%, rgba(160,30,10,.2) 0%, transparent 60%),
+    radial-gradient(ellipse 160% 50% at 70% 50%, rgba(60,0,0,.25) 0%, transparent 60%);
+}
+html[data-mode="light"][data-library="cherry"] {
+  background-color: #a03020;
+  background-image:
+    repeating-linear-gradient(
+      88deg,
+      transparent 0, transparent 4px,
+      rgba(0,0,0,.055) 4px, rgba(0,0,0,.055) 5px
+    ),
+    repeating-linear-gradient(
+      92deg,
+      transparent 0, transparent 4px,
+      rgba(160,50,20,.04) 4px, rgba(160,50,20,.04) 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 12px,
+      rgba(0,0,0,.03) 12px, rgba(0,0,0,.03) 13px
+    ),
+    radial-gradient(ellipse 160% 50% at 30% 50%, rgba(220,100,60,.1) 0%, transparent 60%),
+    radial-gradient(ellipse 160% 50% at 70% 50%, rgba(120,20,10,.12) 0%, transparent 60%);
+}
+
+/* Pine — wide knot-ring grain, light and airy */
+html[data-library="pine"] {
+  background-color: #6b5520;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 30px,
+      rgba(0,0,0,.1) 30px, rgba(0,0,0,.1) 32px,
+      transparent 32px, transparent 70px,
+      rgba(0,0,0,.06) 70px, rgba(0,0,0,.06) 72px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 8px,
+      rgba(255,180,40,.05) 8px, rgba(255,180,40,.05) 9px
+    ),
+    radial-gradient(ellipse 30% 80% at 25% 50%, rgba(0,0,0,.2) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 80% at 75% 50%, rgba(0,0,0,.18) 0%, transparent 60%);
+}
+html[data-mode="light"][data-library="pine"] {
+  background-color: #d4b870;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 30px,
+      rgba(140,80,0,.07) 30px, rgba(140,80,0,.07) 32px,
+      transparent 32px, transparent 70px,
+      rgba(0,0,0,.04) 70px, rgba(0,0,0,.04) 72px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 8px,
+      rgba(0,0,0,.02) 8px, rgba(0,0,0,.02) 9px
+    ),
+    radial-gradient(ellipse 30% 80% at 25% 50%, rgba(120,70,0,.1) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 80% at 75% 50%, rgba(120,70,0,.08) 0%, transparent 60%);
+}
+
+/* Ebony — near-black with faint silver-white whisper lines */
+html[data-library="ebony"] {
+  background-color: #050302;
+  background-image:
+    repeating-linear-gradient(
+      91deg,
+      transparent 0, transparent 7px,
+      rgba(255,255,255,.04) 7px, rgba(255,255,255,.04) 8px
+    ),
+    repeating-linear-gradient(
+      90.5deg,
+      transparent 0, transparent 18px,
+      rgba(255,255,255,.02) 18px, rgba(255,255,255,.02) 19px,
+      transparent 19px, transparent 35px,
+      rgba(255,255,255,.01) 35px, rgba(255,255,255,.01) 36px
+    ),
+    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,.7) 0%, transparent 100%);
+}
+html[data-mode="light"][data-library="ebony"] {
+  background-color: #2a2018;
+  background-image:
+    repeating-linear-gradient(
+      91deg,
+      transparent 0, transparent 7px,
+      rgba(255,255,255,.03) 7px, rgba(255,255,255,.03) 8px
+    ),
+    repeating-linear-gradient(
+      90.5deg,
+      transparent 0, transparent 18px,
+      rgba(255,255,255,.018) 18px, rgba(255,255,255,.018) 19px,
+      transparent 19px, transparent 35px,
+      rgba(255,255,255,.008) 35px, rgba(255,255,255,.008) 36px
+    ),
+    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(40,20,10,.5) 0%, transparent 100%);
+}
+
+/* Driftwood — horizontal weathered grain, bleached and cracked */
+html[data-library="driftwood"] {
+  background-color: #2e2820;
+  background-image:
+    repeating-linear-gradient(
+      2deg,
+      transparent 0, transparent 8px,
+      rgba(255,255,255,.05) 8px, rgba(255,255,255,.05) 9px,
+      transparent 9px, transparent 18px,
+      rgba(255,255,255,.025) 18px, rgba(255,255,255,.025) 19px
+    ),
+    repeating-linear-gradient(
+      178deg,
+      transparent 0, transparent 3px,
+      rgba(0,0,0,.08) 3px, rgba(0,0,0,.08) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0, transparent 40px,
+      rgba(255,255,255,.02) 40px, rgba(255,255,255,.02) 41px
+    );
+}
+html[data-mode="light"][data-library="driftwood"] {
+  background-color: #a89880;
+  background-image:
+    repeating-linear-gradient(
+      2deg,
+      transparent 0, transparent 8px,
+      rgba(0,0,0,.05) 8px, rgba(0,0,0,.05) 9px,
+      transparent 9px, transparent 18px,
+      rgba(0,0,0,.03) 18px, rgba(0,0,0,.03) 19px
+    ),
+    repeating-linear-gradient(
+      178deg,
+      transparent 0, transparent 3px,
+      rgba(255,255,255,.05) 3px, rgba(255,255,255,.05) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0, transparent 40px,
+      rgba(0,0,0,.03) 40px, rgba(0,0,0,.03) 41px
+    );
+}

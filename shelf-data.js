@@ -26,6 +26,7 @@ const SHELF = [
     status: 'finished',
     color: '#2e1a0e',
     initials: 'SI',
+    pages: 352,
     image: 'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1421251028i/18514068.jpg',
   },
   {
@@ -36,6 +37,7 @@ const SHELF = [
     status: 'finished',
     color: '#2e1a0e',
     initials: 'SA',
+    pages: 224,
     image: 'https://covers.openlibrary.org/b/isbn/0062457721-L.jpg',
   },
   {
@@ -46,6 +48,7 @@ const SHELF = [
     status: 'finished',
     color: '#1a2010',
     initials: 'UE',
+    pages: 333,
     image: 'https://covers.openlibrary.org/b/isbn/0307265730-L.jpg',
   },
   {
@@ -56,6 +59,7 @@ const SHELF = [
     status: 'finished',
     color: '#1a1028',
     initials: 'EF',
+    pages: 256,
     image: 'https://covers.openlibrary.org/b/isbn/9780062888433-L.jpg',
   },
   {
@@ -66,6 +70,7 @@ const SHELF = [
     status: 'finished',
     color: '#102028',
     initials: 'IK',
+    pages: 194,
     image: 'https://covers.openlibrary.org/b/isbn/9780143130727-L.jpg',
   },
   {
@@ -76,6 +81,7 @@ const SHELF = [
     status: 'finished',
     color: '#28101a',
     initials: 'IE',
+    pages: 367,
     image: 'https://covers.openlibrary.org/b/isbn/1501110365-L.jpg',
   },
   {
@@ -86,6 +92,7 @@ const SHELF = [
     status: 'finished',
     color: '#101828',
     initials: 'TT',
+    pages: 191,
     image: 'https://covers.openlibrary.org/b/isbn/9780394718330-L.jpg',
   },
   {
@@ -96,6 +103,7 @@ const SHELF = [
     status: 'finished',
     color: '#201028',
     initials: 'IL',
+    pages: 185,
     image: 'https://covers.openlibrary.org/b/isbn/0440204887-L.jpg',
   },
   {
@@ -106,6 +114,7 @@ const SHELF = [
     status: 'finished',
     color: '#0e1e28',
     initials: 'AH',
+    pages: 320,
     image: 'https://covers.openlibrary.org/b/isbn/0735211299-L.jpg',
   },
   {
@@ -116,6 +125,7 @@ const SHELF = [
     status: 'finished',
     color: '#1a1020',
     initials: 'ML',
+    pages: 212,
     image: 'https://covers.openlibrary.org/b/isbn/0446520594-L.jpg',
   },
   {
@@ -126,6 +136,7 @@ const SHELF = [
     status: 'finished',
     color: '#101010',
     initials: 'TM',
+    pages: 98,
     image: 'https://covers.openlibrary.org/b/isbn/0140015728-L.jpg',
   },
   {
@@ -136,6 +147,7 @@ const SHELF = [
     status: 'finished',
     color: '#281808',
     initials: 'GG',
+    pages: 127,
     image: 'https://covers.openlibrary.org/b/isbn/9781591848288-L.jpg',
   },
   {
@@ -1756,7 +1768,21 @@ const SHELF = [
     status: 'finished',
     color: '#1a0a0a',
     initials: 'DC',
+    series: true,
+    glyph: '⚔',
     image: 'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1734203042i/56791389.jpg',
+  },
+  {
+    id: 167,
+    type: 'book',
+    title: 'Lord of the Mysteries',
+    author: 'Cuttlefish That Loves Diving',
+    status: 'finished',
+    color: '#1a1020',
+    initials: 'LM',
+    series: true,
+    glyph: '✦',
+    image: 'https://covers.openlibrary.org/b/id/15123148-L.jpg',
   }
 
 ];
