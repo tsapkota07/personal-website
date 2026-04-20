@@ -8,13 +8,13 @@
 const STATUS_LABEL = {
   reading:  'reading',
   finished: 'finished',
-  want:     'want to read',
 };
 
 // ── State ──────────────────────────────────────────────────
 let activeType   = 'all';   // 'all' | 'book' | 'manga'
 let activeStatus = 'all';   // 'all' | 'reading' | 'finished' | 'want'
 let activeSort   = 'none'; // default: books before manga
+
 let searchQuery  = '';
 
 // ── DOM refs ───────────────────────────────────────────────
@@ -46,7 +46,7 @@ function getFiltered() {
         case 'none':
           if (a.type !== b.type) return a.type === 'book' ? -1 : 1;
           return 0;
-default:           return 0;
+        default: return 0;
       }
     });
 }
@@ -205,7 +205,14 @@ function trackEasterEgg(id) {
 
   if (count >= total) {
     sessionStorage.setItem('library_unlocked', '1');
-    if (typeof showLibraryToggle === 'function') showLibraryToggle();
+    // Wait for the toast to be readable, then animate the unlock
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Wait for scroll to finish, then reveal the mode switcher
+      setTimeout(() => {
+        if (typeof showLibraryToggle === 'function') showLibraryToggle(true);
+      }, 700);
+    }, 1000);
   }
 }
 
@@ -218,7 +225,7 @@ function showEggToast(count, total) {
   toast.className = 'egg-toast';
 
   if (count >= total) {
-    toast.innerHTML = `<span class="egg-toast-icon">✦</span> both secrets found — <strong>library mode unlocked</strong>`;
+    toast.innerHTML = `<span class="egg-toast-icon">✦</span> both secrets found — <strong>modes unlocked</strong>`;
   } else {
     toast.innerHTML = `<span class="egg-toast-icon">✦</span> secret found — <strong>${count} of ${total}</strong>`;
   }

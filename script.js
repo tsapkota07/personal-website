@@ -98,21 +98,13 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
    Persists for the tab session only (sessionStorage).
    ──────────────────────────────────────────────────────── */
 const WOODS = [
-  { id: 'none',      color: null,      title: 'Off'       },
-  { id: 'mahogany',  color: '#8b4513', title: 'Mahogany'  },
-  { id: 'oak',       color: '#c8902a', title: 'Oak'       },
-  { id: 'walnut',    color: '#5c3317', title: 'Walnut'    },
-  { id: 'cherry',    color: '#9b2335', title: 'Cherry'    },
-  { id: 'pine',      color: '#d4a853', title: 'Pine'      },
-  { id: 'ebony',     color: '#2a1e16', title: 'Ebony'     },
-  { id: 'driftwood', color: '#8c7b6b', title: 'Driftwood' },
+  { id: 'none',     color: null,      title: 'Off'      },
+  { id: 'wood',     color: '#c8860a', title: 'Wood'     },
+  { id: 'walnut',   color: '#5c3317', title: 'Walnut'   },
+  { id: 'ebony',    color: '#2a1e16', title: 'Ebony'    },
 ];
 
 function isLibraryUnlocked() {
-  if (location.hostname === 'localhost' ||
-      location.hostname === '127.0.0.1' ||
-      location.hostname === '') return true;
-  if (sessionStorage.getItem('shelf_edit') === '1') return true;
   if (sessionStorage.getItem('library_unlocked') === '1') return true;
   return false;
 }
@@ -130,13 +122,25 @@ function setLibraryMode(woodId) {
       : '';
   });
   ring.title = wood.title;
+  updateFrameOffset();
 }
 
-function showLibraryToggle() {
+function updateFrameOffset() {
+  const frame = document.getElementById('medieval-frame');
+  if (!frame) return;
+  // Measure nav + library-bar combined height so the frame top
+  // starts right below them, visually growing out of the navbar
+  const nav = document.querySelector('.nav');
+  const bar = document.getElementById('library-bar');
+  const offset = (nav ? nav.offsetHeight : 0) + (bar ? bar.offsetHeight : 0);
+  frame.style.top = offset + 'px';
+}
+
+function showLibraryToggle(animate) {
   if (document.getElementById('library-ring')) return;
 
   const S = 28, cx = 14, cy = 14, outerR = 12, innerR = 7.5;
-  const gapDeg = 5, spanDeg = 45 - gapDeg;
+  const gapDeg = 5, spanDeg = 90 - gapDeg;
 
   function pt(angleDeg, r) {
     const rad = (angleDeg - 90) * Math.PI / 180;
@@ -144,7 +148,7 @@ function showLibraryToggle() {
   }
 
   function arcPath(i) {
-    const c = 315 + i * 45, h = spanDeg / 2;
+    const c = 315 + i * 90, h = spanDeg / 2;
     const [ox1, oy1] = pt(c - h, outerR), [ox2, oy2] = pt(c + h, outerR);
     const [ix1, iy1] = pt(c - h, innerR), [ix2, iy2] = pt(c + h, innerR);
     const f = n => n.toFixed(3);
@@ -176,8 +180,39 @@ function showLibraryToggle() {
     setLibraryMode(next.id);
   });
 
-  const modeBtn = document.getElementById('mode-toggle');
-  if (modeBtn) modeBtn.insertAdjacentElement('afterend', svg);
+  const leftLine = document.createElement('div');
+  leftLine.className = 'library-line library-line--left';
+
+  const rightLine = document.createElement('div');
+  rightLine.className = 'library-line library-line--right';
+
+  const bar = document.createElement('div');
+  bar.id = 'library-bar';
+  bar.appendChild(leftLine);
+  bar.appendChild(svg);
+  bar.appendChild(rightLine);
+  const nav = document.querySelector('.nav');
+  if (nav) nav.insertAdjacentElement('afterend', bar);
+
+  if (animate) {
+    requestAnimationFrame(() => bar.classList.add('library-bar--unlocking'));
+  } else {
+    bar.classList.add('library-bar--loaded');
+  }
+
+  // Inject the page frame (hidden by CSS until wood mode is active)
+  if (!document.getElementById('medieval-frame')) {
+    const frame = document.createElement('div');
+    frame.id = 'medieval-frame';
+    ['tl', 'tr', 'bl', 'br'].forEach(pos => {
+      const c = document.createElement('div');
+      c.className = `mf-corner mf-corner--${pos}`;
+      frame.appendChild(c);
+    });
+    document.body.appendChild(frame);
+  }
+  // Re-measure on resize so the frame stays aligned with the nav
+  window.addEventListener('resize', updateFrameOffset, { passive: true });
 
   setLibraryMode(sessionStorage.getItem('library_wood') || 'none');
 }
