@@ -122,18 +122,6 @@ function setLibraryMode(woodId) {
       : '';
   });
   ring.title = wood.title;
-  updateFrameOffset();
-}
-
-function updateFrameOffset() {
-  const frame = document.getElementById('medieval-frame');
-  if (!frame) return;
-  // Measure nav + library-bar combined height so the frame top
-  // starts right below them, visually growing out of the navbar
-  const nav = document.querySelector('.nav');
-  const bar = document.getElementById('library-bar');
-  const offset = (nav ? nav.offsetHeight : 0) + (bar ? bar.offsetHeight : 0);
-  frame.style.top = offset + 'px';
 }
 
 function showLibraryToggle(animate) {
@@ -200,19 +188,18 @@ function showLibraryToggle(animate) {
     bar.classList.add('library-bar--loaded');
   }
 
-  // Inject the page frame (hidden by CSS until wood mode is active)
-  if (!document.getElementById('medieval-frame')) {
-    const frame = document.createElement('div');
-    frame.id = 'medieval-frame';
-    ['tl', 'tr', 'bl', 'br'].forEach(pos => {
-      const c = document.createElement('div');
-      c.className = `mf-corner mf-corner--${pos}`;
-      frame.appendChild(c);
-    });
-    document.body.appendChild(frame);
+  // Inject page pillars and floor (hidden by CSS until wood mode is active)
+  if (!document.getElementById('wood-pillar-left')) {
+    const pl = document.createElement('div');
+    pl.id = 'wood-pillar-left';
+    const pr = document.createElement('div');
+    pr.id = 'wood-pillar-right';
+    const fl = document.createElement('div');
+    fl.id = 'wood-floor';
+    document.body.appendChild(pl);
+    document.body.appendChild(pr);
+    document.body.appendChild(fl);
   }
-  // Re-measure on resize so the frame stays aligned with the nav
-  window.addEventListener('resize', updateFrameOffset, { passive: true });
 
   setLibraryMode(sessionStorage.getItem('library_wood') || 'none');
 }

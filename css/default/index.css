@@ -1,0 +1,19 @@
+/* ============================================================
+   default — index.css
+   Entry point. Imports all default mode component stylesheets.
+   ============================================================ */
+
+@import 'variables.css';
+@import 'typography.css';
+@import 'navbar.css';
+@import 'hero.css';
+@import 'sections.css';
+@import 'projects.css';
+@import 'shelf-grid.css';
+@import 'shelf-card.css';
+@import 'shelf-controls.css';
+@import 'resume.css';
+@import 'modal.css';
+@import 'footer.css';
+@import 'theme-switcher.css';
+@import 'mode-switcher.css';

@@ -2109,39 +2109,23 @@ html[data-library]:not([data-library="none"]) {
   background-attachment: fixed;
 }
 
-/* ── Medieval page frame ─────────────────────────────────── */
-#medieval-frame {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 50;    /* below nav (100) so nav always sits on top */
+/* ── Medieval page pillars & floor ──────────────────────── */
+#wood-pillar-left,
+#wood-pillar-right,
+#wood-floor {
   display: none;
+  pointer-events: none;
+  z-index: 50;  /* below nav (100) so nav always sits on top */
 }
 
-html[data-library="wood"] #medieval-frame {
+html[data-library="wood"] #wood-pillar-left,
+html[data-library="wood"] #wood-pillar-right {
   display: block;
-  /* top is set by JS to match nav + library-bar height */
-
-  /* Outer beveled border — light from top-left */
-  border-style: solid;
-  border-width: 14px;
-  border-top-color:    #c8880e;
-  border-left-color:   #9a6010;
-  border-right-color:  #4a2806;
-  border-bottom-color: #2a1402;
-
-  /* Moulding layers */
-  box-shadow:
-    /* outer gold rim */
-    0 0 0 1px rgba(210,158,18,.5),
-    /* inner channel */
-    inset 0 0 0 1px  rgba(230,178,32,.6),
-    inset 0 0 0 3px  rgba(18,6,1,.95),
-    inset 0 0 0 5px  rgba(175,120,16,.35),
-    inset 0 0 0 7px  rgba(18,6,1,.8),
-    inset 0 0 0 8px  rgba(140,95,12,.2);
-
-  /* Wood grain running horizontally across the border */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: var(--wood-pillar-w);
+  /* Horizontal wood grain across the pillar face */
   background-image:
     repeating-linear-gradient(
       90deg,
@@ -2152,68 +2136,54 @@ html[data-library="wood"] #medieval-frame {
     );
 }
 
-/* Inner sight line */
-html[data-library="wood"] #medieval-frame::before {
-  content: '';
-  position: absolute;
-  inset: 8px;
-  border: 1px solid rgba(215,168,25,.22);
-  pointer-events: none;
-}
-
-/* ── Corner rosettes ─────────────────────────────────────── */
-.mf-corner {
-  display: none;
-  position: absolute;
-  width: 28px;
-  height: 28px;
-}
-
-html[data-library="wood"] .mf-corner {
-  display: block;
-}
-
-.mf-corner--tl { top: 0;    left: 0;    }
-.mf-corner--tr { top: 0;    right: 0;   }
-.mf-corner--bl { bottom: 0; left: 0;    }
-.mf-corner--br { bottom: 0; right: 0;   }
-
-/* Diamond rosette — rotated square inside the corner */
-.mf-corner::before {
-  content: '';
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: #5a2e10;
-  background-image: radial-gradient(circle at center, #d4a020 0%, #8a5510 50%, #5a2e10 100%);
-  border: 1.5px solid rgba(220,170,30,.8);
+/* Left pillar — light source from the left, highlighted outer edge */
+html[data-library="wood"] #wood-pillar-left {
+  left: 0;
+  background-color: #8a5010;
+  border-right: 1px solid rgba(215,168,25,.22);
   box-shadow:
-    0 0 6px rgba(212,148,14,.6),
-    inset 0 0 4px rgba(255,200,50,.2);
+    inset 3px 0 0 rgba(215,168,25,.4),
+    2px 0 12px rgba(0,0,0,.5);
 }
 
-/* Small center dot */
-.mf-corner::after {
-  content: '';
+/* Right pillar — in shadow, darker */
+html[data-library="wood"] #wood-pillar-right {
+  right: 0;
+  background-color: #8a5010;
+  border-left: 1px solid rgba(215,168,25,.18);
+  box-shadow:
+    inset -2px 0 0 rgba(80,40,8,.6),
+    -2px 0 12px rgba(0,0,0,.6);
+}
+
+/* Floor bar — only visible when scrolled to the bottom of the page */
+html[data-library="wood"] #wood-floor {
+  display: block;
   position: absolute;
-  width: 5px;
-  height: 5px;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  background: #f0c040;
-  border-radius: 50%;
-  box-shadow: 0 0 4px rgba(240,192,64,.8);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--wood-pillar-w);
+  background-color: #2a1402;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 5px,
+      rgba(255,178,55,.07) 5px, rgba(255,178,55,.07) 6px,
+      transparent 6px, transparent 14px,
+      rgba(0,0,0,.12) 14px, rgba(0,0,0,.12) 15px
+    );
+  border-top: 1px solid rgba(215,168,25,.18);
 }
 
-/* Medieval — stone wall background, wood panels mounted on top */
+/* Medieval — stone wall background, body establishes containing block for #wood-floor */
 html[data-library="wood"] body {
-  position: relative;  /* establishes containing block for the absolute frame */
-  padding: 0 14px;     /* left/right clearance matches frame border width */
+  position: relative;
 }
 
 html[data-library="wood"] {
+  --wood-pillar-w: 16px;
+
   --text:       #f0e2c0;
   --text-muted: #c8a068;
   --text-dim:   #88603a;
@@ -2249,26 +2219,140 @@ html[data-library="wood"] {
     );
 }
 
-/* Nav — dark oak beam across the top */
+/* Nav — cathedral gold ceiling */
 html[data-library="wood"] .nav::before {
-  background-color: #2e1606;
+  background-color: #c8920a;
   background-image:
+    /* Vertical gothic vault-rib lines */
     repeating-linear-gradient(
-      88.5deg,
-      transparent 0, transparent 4px,
-      rgba(255,170,50,.07) 4px, rgba(255,170,50,.07) 5px,
-      transparent 5px, transparent 11px,
-      rgba(0,0,0,.12) 11px, rgba(0,0,0,.12) 12px
+      90deg,
+      transparent 0px, transparent 79px,
+      rgba(255,210,80,.06) 79px, rgba(255,210,80,.06) 80px,
+      transparent 80px, transparent 119px,
+      rgba(0,0,0,.08) 119px, rgba(0,0,0,.08) 120px
+    ),
+    /* Fine horizontal gilding lines */
+    repeating-linear-gradient(
+      180deg,
+      transparent 0px, transparent 11px,
+      rgba(255,220,90,.04) 11px, rgba(255,220,90,.04) 12px
     );
   opacity: 1 !important;
 }
+
+/* Heraldic dragon — centered SVG silhouette, atmospheric decoration */
+html[data-library="wood"] .nav::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 60px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40'%3E%3Cpath fill='%23fffef5' d='M6 34 C4 31 3 27 5 23 C7 19 11 17 14 19 C12 14 14 10 18 9 C22 8 26 11 25 15 C28 11 33 10 37 13 C38 9 43 8 47 11 C50 8 55 8 58 12 C61 9 66 10 67 14 C70 11 74 13 74 17 C77 15 79 18 78 21 C80 22 80 26 77 28 C79 30 78 34 74 34 C71 37 66 37 64 33 C61 37 55 38 52 33 C49 37 43 37 40 33 C37 36 31 36 29 32 C25 35 18 35 14 32 C10 35 7 35 6 34Z M15 21 C17 18 21 20 20 23 C18 25 14 24 15 21Z M40 15 C42 12 46 13 46 17 C44 19 40 18 40 15Z M58 14 C60 11 64 13 63 16 C61 18 58 17 58 14Z M22 28 L28 23 L33 28Z M44 27 L50 22 L55 27Z M68 22 L72 18 L73 23Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 0;
+}
+
 html[data-library="wood"] .nav.scrolled::before {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
 html[data-library="wood"] .nav {
-  border-bottom: 2px solid rgba(0,0,0,.5);
-  box-shadow: 0 4px 16px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,190,60,.1);
+  max-width: 100%;
+  margin: 0;
+  /* Cathedral crown molding — top and bottom gold edges */
+  border-top: 1px solid rgba(255,230,120,.30);
+  border-bottom: 3px solid rgba(232,175,28,.75);
+  box-shadow:
+    /* Bright top rim — like gilded crown molding */
+    inset 0 4px 0 rgba(255,220,80,.35),
+    inset 0 1px 0 rgba(255,240,140,.15),
+    /* Inner bottom shadow — ledge depth */
+    inset 0 -2px 8px rgba(100,60,0,.25),
+    /* Outer gold line at the bottom edge */
+    0 0 0 1px rgba(232,168,10,.5),
+    /* Chandelier glow — warm gold bloom downward */
+    0 4px 32px rgba(200,140,10,.40),
+    0 2px 8px rgba(0,0,0,.50);
+}
+
+/* Nav text — cathedral white/cream on gold ceiling */
+html[data-library="wood"] .nav-brand {
+  color: #fffef5;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.60),
+    0 0 20px rgba(255,210,80,.55),
+    0 0 40px rgba(200,140,10,.25);
+}
+
+html[data-library="wood"] .nav-link {
+  color: #fff8e8;
+  text-shadow:
+    0 1px 2px rgba(0,0,0,.60),
+    0 0 12px rgba(230,180,40,.20);
+}
+
+html[data-library="wood"] .nav-link:hover { color: #ffffff; }
+html[data-library="wood"] .nav-link.active {
+  color: #ffffff;
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.50),
+    0 0 16px rgba(255,220,80,.60);
+}
+
+html[data-library="wood"] .nav-hello {
+  color: #fffef5;
+  opacity: 1;
+  border-color: rgba(255,220,80,.45);
+  text-shadow:
+    0 1px 0 rgba(0,0,0,.60),
+    0 0 14px rgba(255,200,60,.30);
+  box-shadow:
+    inset 0 1px 0 rgba(255,230,100,.15),
+    0 1px 6px rgba(0,0,0,.45);
+}
+
+html[data-library="wood"] .nav-hello:hover {
+  color: #ffffff;
+  opacity: 1;
+  border-color: rgba(255,230,100,.65);
+  box-shadow:
+    inset 0 1px 0 rgba(255,240,120,.20),
+    0 0 12px rgba(200,148,10,.35),
+    0 1px 6px rgba(0,0,0,.40);
+}
+
+html[data-library="wood"] .mode-toggle {
+  color: #ffe8a0;
+  text-shadow: 0 1px 2px rgba(0,0,0,.55), 0 0 10px rgba(220,170,30,.25);
+}
+
+/* Library bar, main content, and footer — full width in wood mode */
+html[data-library="wood"] #library-bar {
+  max-width: 100%;
+  margin: 0;
+  padding-left: var(--wood-pillar-w);
+  padding-right: var(--wood-pillar-w);
+}
+
+html[data-library="wood"] .main {
+  max-width: 100%;
+  margin: 0;
+  padding-left: calc(var(--wood-pillar-w) + var(--px));
+  padding-right: calc(var(--wood-pillar-w) + var(--px));
+}
+
+html[data-library="wood"] .footer {
+  max-width: 100%;
+  margin: 0;
+  padding-left: calc(var(--wood-pillar-w) + var(--px));
+  padding-right: calc(var(--wood-pillar-w) + var(--px));
+  border-top-color: rgba(215,168,25,.2);
 }
 
 /* Content panels — warm wood planks mounted on the stone */
