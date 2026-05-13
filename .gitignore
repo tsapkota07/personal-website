@@ -1,11 +1,8 @@
-# Claude Code
+# Claude Code For Concepts
 .claude/
 
-# Deploy script — contains server IP and key path
+# Deploy script: This contains Server IP and Key path
 deploy.private.sh
-
-# Internal project context
-CLAUDE.md
 
 # Old local server script (replaced by run-local.sh)
 serve.sh
@@ -13,3 +10,6 @@ serve.sh
 # macOS
 .DS_Store
 **/.DS_Store
+
+# Misc
+learnAlongside/
